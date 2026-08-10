@@ -352,28 +352,8 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   margin-bottom: 1.1rem;
 }
  
-.footer__col { display: flex; flex-direction: column; }
-.footer__link { color: var(--text-muted); font-size: 0.92rem; padding-block: 0.4rem; transition: color var(--t-fast); }
-.footer__link:hover { color: var(--cyan); }
-.footer__socials { display: flex; gap: 0.7rem; }
- 
-.footer__social {
-  width: 38px; height: 38px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.72rem;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  border: var(--border-soft);
-  color: var(--text-muted);
-  transition: color var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
-}
- 
-.footer__social:hover { color: var(--white); border-color: var(--cyan); transform: translateY(-3px); }
-.footer__bottom { text-align: center; padding-block: 1.6rem; color: var(--text-faint); font-size: 0.82rem; }
- 
+
+
 /* 19. RESPONSIVE */
 @media (max-width: 1080px) {
   .footer__grid { grid-template-columns: 1fr 1fr; }
