@@ -22,8 +22,85 @@
         <a href="index.html#foros" class="navbar__link">Foros</a>
         <a href="html/contacto.html" class="navbar__link">Contacto</a>
       </nav>
+
+      <!-- Botón hamburguesa -->
+      <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+    </div>
+  </header>
+
+  
+  <section class="plans" id="planes">
+    <div class="section-inner">
+      <p class="eyebrow text-center">Elige tu camino</p>
+      <h2 class="section-title text-center">Nuestros planes</h2>
+      <p class="section-subtitle text-center">
+        Empieza gratis o desbloquea más beneficios con Normal o Premium. Puedes cambiar de plan cuando quieras.
+      </p>
+
+      <div class="plans__grid">
+
+        <!-- PLAN GRATIS -->
+        <article class="plan-card">
+          <h3 class="plan-card__name">Gratis</h3>
+          <p class="plan-card__price">$0 <span>/ para siempre</span></p>
+
+          <ul class="plan-card__list plan-card__list--pros">
+            <li>Acceso a todas las comunidades</li>
+            <li>Participar en foros</li>
+            <li>Ver eventos públicos</li>
+          </ul>
+          <ul class="plan-card__list plan-card__list--cons">
+            <li>Sin insignias de perfil</li>
+            <li>Sin acceso a eventos exclusivos</li>
+          </ul>
+
+          <a href="#" class="btn btn--outline plan-card__btn">Elegir Gratis</a>
+        </article>
+
+        <!-- PLAN NORMAL -->
+        <article class="plan-card">
+          <h3 class="plan-card__name">Normal</h3>
+          <p class="plan-card__price">$4.99 <span>/ mes</span></p>
+
+          <ul class="plan-card__list plan-card__list--pros">
+            <li>Todo lo del plan Gratis</li>
+            <li>Insignia de perfil personalizada</li>
+            <li>Prioridad para inscribirte a torneos</li>
+          </ul>
+          <ul class="plan-card__list plan-card__list--cons">
+            <li>No incluye eventos VIP</li>
+          </ul>
+
+          <a href="#" class="btn btn--outline plan-card__btn">Elegir Normal</a>
+        </article>
+
+        <!-- PLAN PREMIUM (destacado con la clase plan-card--featured) -->
+        <article class="plan-card plan-card--featured">
+          <span class="plan-card__badge">Más popular</span>
+          <h3 class="plan-card__name">Premium</h3>
+          <p class="plan-card__price">$9.99 <span>/ mes</span></p>
+
+          <ul class="plan-card__list plan-card__list--pros">
+            <li>Todo lo del plan Normal</li>
+            <li>Eventos y torneos exclusivos VIP</li>
+            <li>Soporte prioritario</li>
+          </ul>
+          <ul class="plan-card__list plan-card__list--cons">
+            <li>Es el plan de mayor costo</li>
+          </ul>
+
+          <a href="#" class="btn btn--primary plan-card__btn">Elegir Premium</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
  
   <main class="unete-container">
  
