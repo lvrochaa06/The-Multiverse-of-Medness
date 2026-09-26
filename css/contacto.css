@@ -213,6 +213,151 @@ button:focus-visible{
 
 /* Ocultar nav en mobile (breakpoints al final) */
 
+/*botones (usados por el CTA "Únete" del navbar y por el formulario)*/
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.9rem 1.9rem;
+  border-radius: 999px;
+  border: var(--border-soft);
+  transition: transform var(--t-fast), box-shadow var(--t-fast), background var(--t-fast), border-color var(--t-fast);
+  white-space: nowrap;
+}
+.btn--primary{
+  background: var(--gradient-portal);
+  color: var(--white);
+  border: none;
+  box-shadow: var(--shadow-purple);
+}
+.btn--primary:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 0 55px rgba(139,92,246,0.55), 0 0 25px rgba(34,211,238,0.35);
+}
+.btn--small{ padding: 0.65rem 1.4rem; font-size: 0.85rem; }
+
+/*utilidades de layout/texto compartidas con el resto del sitio*/
+section{ position: relative; padding-block: var(--section-pad); }
+
+.eyebrow{
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 1rem;
+}
+
+/*3. SECCIÓN DE CONTACTO*/
+.contact-hero{
+  padding-top: calc(var(--section-pad) + 3rem);
+  overflow: hidden;
+}
+
+.contact-hero__glow{
+  position: absolute;
+  top: -10%; left: 50%;
+  width: 900px; height: 900px;
+  transform: translateX(-50%);
+  background: var(--gradient-glow);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.contact-title{
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.contact-desc{
+  color: var(--text-muted);
+  max-width: 48ch;
+  margin-bottom: 2rem;
+}
+
+.contact-details{ display: flex; flex-direction: column; gap: 0.9rem; }
+.contact-details li{ color: var(--text-main); font-size: 0.95rem; }
+.contact-details__label{
+  display: inline-block;
+  min-width: 90px;
+  color: var(--text-faint);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/*tarjeta del formulario, mismo estilo visual que la de unete.html*/
+.form-card{
+  position: relative;
+  width: 100%;
+  padding: 45px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 25px 80px rgba(0,0,0,0.55), 0 0 40px rgba(139,92,246,0.15);
+}
+
+.contact-form{ display: flex; flex-direction: column; gap: 20px; }
+.input-group{ display: flex; flex-direction: column; gap: 8px; }
+
+.input-group label{
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.input-group input,
+.input-group textarea{
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(5,5,16,0.55);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  resize: vertical;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast), background var(--t-fast), transform var(--t-fast);
+}
+.input-group input::placeholder,
+.input-group textarea::placeholder{ color: var(--text-faint); }
+.input-group input:focus,
+.input-group textarea:focus{
+  border-color: var(--cyan);
+  background: rgba(5,5,16,0.75);
+  box-shadow: 0 0 0 3px rgba(34,211,238,0.08), 0 0 20px rgba(34,211,238,0.12);
+  transform: translateY(-1px);
+}
+
+.contact-form__submit{ margin-top: 8px; width: 100%; }
+
+/*mensaje de éxito/error que escribe script.js*/
+.form-message{ min-height: 1.2em; font-size: 0.9rem; text-align: center; }
+.form-message.is-error{ color: #F87171; }
+.form-message.is-success{ color: var(--cyan); }
+
 
 
 /*
@@ -290,10 +435,6 @@ button:focus-visible{
 
 /* Tablets grandes */
 @media (max-width: 1080px){
-  .universes__grid{ grid-template-columns: repeat(2, 1fr); }
-  .events__list{ grid-template-columns: repeat(2, 1fr); }
-  .communities__grid{ grid-template-columns: repeat(2, 1fr); }
-  .stats__grid{ grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
   .footer__grid{ grid-template-columns: 1fr 1fr; }
 }
 
@@ -301,26 +442,14 @@ button:focus-visible{
 @media (max-width: 880px){
   .navbar__nav{ display: none; }
 
-  .about__grid{ grid-template-columns: 1fr; }
-  .about__media{ order: -1; max-width: 420px; margin: 0 auto; }
-
-  .testimonials__grid{ grid-template-columns: 1fr; }
-  .steps{ grid-template-columns: 1fr; }
+  .contact-grid{ grid-template-columns: 1fr; }
+  .form-card{ order: -1; }
 }
 
 /* Móviles */
 @media (max-width: 600px){
   :root{ --section-pad: 4.5rem; }
 
-  .universes__grid{ grid-template-columns: 1fr; }
-  .events__list{ grid-template-columns: 1fr; }
-  .communities__grid{ grid-template-columns: 1fr; }
-  .stats__grid{ grid-template-columns: 1fr 1fr; }
-
-  .hero__actions{ flex-direction: column; width: 100%; }
-  .hero__actions .btn{ width: 100%; }
-
-  .events__header{ flex-direction: column; align-items: flex-start; }
-
+  .form-card{ padding: 30px 20px; }
   .footer__grid{ grid-template-columns: 1fr; gap: 2rem; }
 }
