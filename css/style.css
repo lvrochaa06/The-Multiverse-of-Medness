@@ -1,13 +1,6 @@
-/* =====================================================
-   THE MULTIVERSE OF MADNESS — STYLESHEET
-   Estructura: Variables > Reset > Utilidades > Navbar >
-   Hero > About > Universos > Eventos > Comunidades >
-   Cómo funciona > Stats > Testimonios > CTA final > Footer
-   ===================================================== */
-
-/* =====================================================
+/* 
    1. VARIABLES CSS
-   ===================================================== */
+    */
 :root{
   /* Fondos */
   --bg-void:      #050510;
@@ -59,9 +52,9 @@
   --container-w: 1240px;
 }
 
-/* =====================================================
+/* 
    2. RESET
-   ===================================================== */
+    */
 *, *::before, *::after{
   box-sizing: border-box;
   margin: 0;
@@ -124,9 +117,9 @@ button:focus-visible{
   border-radius: 4px;
 }
 
-/* =====================================================
+/* 
    3. UTILIDADES / LAYOUT
-   ===================================================== */
+    */
 .section-inner{
   max-width: var(--container-w);
   margin: 0 auto;
@@ -239,9 +232,9 @@ section{
 .btn--small{ padding: 0.65rem 1.4rem; font-size: 0.85rem; }
 .btn--large{ padding: 1.15rem 2.6rem; font-size: 1.05rem; }
 
-/* =====================================================
+/* 
    4. FONDO CÓSMICO GLOBAL
-   ===================================================== */
+    */
 .cosmic-bg{
   position: fixed;
   inset: 0;
@@ -293,16 +286,21 @@ section{
   bottom: -12%; left: 20%;
 }
 
-/* =====================================================
+/* 
    5. NAVBAR
-   ===================================================== */
+   Con fondo oscuro permanente para que se lea sobre
+   secciones claras y oscuras (sin necesitar JavaScript)
+    */
 .navbar{
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  padding: 1.4rem 0;
+  padding: 1.1rem 0;
+  background: rgba(5,5,16,0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   transition: padding var(--t-med), background var(--t-med), border-color var(--t-med), box-shadow var(--t-med);
-  border-bottom: 1px solid transparent;
 }
 
 .navbar.is-scrolled{
@@ -390,9 +388,9 @@ section{
 
 /* Ocultar nav en mobile (breakpoints al final) */
 
-/* =====================================================
+/* 
    6. HERO
-   ===================================================== */
+    */
 .hero{
   position: relative;
   min-height: 100vh;
@@ -542,9 +540,9 @@ section{
   100%{ top: 100%; }
 }
 
-/* =====================================================
+/* 
    7. ABOUT
-   ===================================================== */
+    */
 .about__grid{
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -602,9 +600,9 @@ section{
   filter: blur(10px);
 }
 
-/* =====================================================
+/* 
    8. EXPLORA TU UNIVERSO — CARDS
-   ===================================================== */
+    */
 .universes__grid{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -666,9 +664,9 @@ section{
   transform: scale(1.3);
 }
 
-/* =====================================================
+/* 
    9. EVENTOS DESTACADOS
-   ===================================================== */
+    */
 .events__header{
   display: flex;
   align-items: flex-end;
@@ -744,9 +742,9 @@ section{
   margin-bottom: 1.3rem;
 }
 
-/* =====================================================
+/* 
    10. COMUNIDADES ACTIVAS
-   ===================================================== */
+    */
 .communities__grid{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -783,28 +781,10 @@ section{
   margin-bottom: 1rem;
 }
 
-.community-card__avatars{
-  display: flex;
-  align-items: center;
-}
-.community-card__avatars img{
-  width: 34px; height: 34px;
-  border-radius: 50%;
-  border: 2px solid var(--bg-panel);
-  object-fit: cover;
-  margin-left: -10px;
-}
-.community-card__avatars img:first-child{ margin-left: 0; }
-.community-card__more{
-  margin-left: 0.6rem;
-  font-size: 0.78rem;
-  color: var(--cyan);
-  font-family: var(--font-heading);
-}
 
-/* =====================================================
+/* 
    11. CÓMO FUNCIONA
-   ===================================================== */
+    */
 .steps{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -852,9 +832,9 @@ section{
 
 .step__desc{ color: var(--text-muted); font-size: 0.92rem; }
 
-/* =====================================================
+/* 
    12. ESTADÍSTICAS
-   ===================================================== */
+    */
 .stats{
   background: var(--bg-deep);
   border-block: var(--border-soft);
@@ -885,9 +865,9 @@ section{
   letter-spacing: 0.03em;
 }
 
-/* =====================================================
+/* 
    13. TESTIMONIOS
-   ===================================================== */
+    */
 .testimonials__grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -932,9 +912,9 @@ section{
 .testimonial-card__name{ font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; }
 .testimonial-card__role{ color: var(--cyan); font-size: 0.78rem; }
 
-/* =====================================================
+/* 
    14. LLAMADO FINAL
-   ===================================================== */
+    */
 .final-cta{
   position: relative;
   text-align: center;
@@ -968,9 +948,9 @@ section{
   margin-bottom: 2.2rem;
 }
 
-/* =====================================================
+/* 
    15. FOOTER
-   ===================================================== */
+    */
 .footer{
   background: var(--bg-deep);
   border-top: var(--border-soft);
@@ -1039,13 +1019,13 @@ section{
   font-size: 0.82rem;
 }
 
-/* =====================================================
+/* 
    16. STRETCHED LINK
    Patrón para que toda una <article> sea clickeable
    sin perder el HTML semántico: el <a> real solo envuelve
    el título, y este ::after invisible se estira sobre
    todo el contenedor con position: relative más cercano.
-   ===================================================== */
+    */
 .stretched-link::after{
   content: '';
   position: absolute;
@@ -1069,9 +1049,65 @@ section{
   z-index: 2;
 }
 
-/* =====================================================
-   17. RESPONSIVE
-   ===================================================== */
+/* 
+   17. SECCIONES CLARAS
+   Redefine las variables solo dentro de la sección,
+   así textos y bordes se adaptan solos.
+    */
+.section--light{
+  --text-main:   #0F172A;
+  --text-muted:  #475569;
+  --text-faint:  #64748B;
+  --bg-panel:    #FFFFFF;
+  --border-soft: 1px solid rgba(15, 23, 42, 0.10);
+
+  background: #F4F6FB;
+  color: var(--text-main);
+}
+
+/* OPCIONAL: "Eventos" en blanco puro para separarlo de las otras dos claras */
+.section--light.events{ background: #FFFFFF; }
+.section--light.events .event-card{ background: #F4F6FB; }  /* OPCIONAL */
+
+/* Cards: eran translúcidas, sobre fondo claro no se verían */
+.section--light .uni-card,
+.section--light .community-card{
+  background: #FFFFFF;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.section--light .event-card{
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* Hover: sin esto, las sombras de arriba pisan las del hover original */
+.section--light .uni-card:hover{
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 18px 40px rgba(139, 92, 246, 0.25);
+}
+.section--light .event-card:hover{
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18);
+}
+.section--light .community-card:hover{
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+}
+
+
+.section--light .link-arrow{ color: var(--purple-deep); }
+.section--light .link-arrow:hover{ color: var(--purple); }
+
+/* El borde blanco del botón outline desaparecería sobre fondo claro */
+.section--light .btn--outline{
+  border-color: rgba(15, 23, 42, 0.25);
+}
+.section--light .btn--outline:hover{
+  border-color: var(--purple-deep);
+  color: var(--purple-deep);
+}
+
+/* 
+   18. RESPONSIVE
+    */
 
 /* Tablets grandes */
 @media (max-width: 1080px){
