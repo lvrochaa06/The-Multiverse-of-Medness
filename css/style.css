@@ -1105,6 +1105,155 @@ section{
   color: var(--purple-deep);
 }
 
+/* =====================================================
+   ACCESO: icono de persona + portales
+   ===================================================== */
+.access{
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Icono */
+.access__trigger{
+  position: relative;
+  display: block;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  list-style: none;
+  transition: transform var(--t-fast);
+}
+.access__trigger::-webkit-details-marker{ display: none; }
+
+/* Anillo de degradado que gira despacio */
+.access__trigger::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--purple), var(--blue), var(--cyan), var(--purple));
+  box-shadow: 0 0 22px rgba(139, 92, 246, 0.55);
+  animation: accessSpin 8s linear infinite;
+  transition: box-shadow var(--t-fast);
+}
+
+/* Disco oscuro con la persona en el centro */
+.access__ring{
+  position: absolute;
+  inset: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #0B0D1C;
+  color: var(--white);
+}
+
+.access__trigger:hover{ transform: scale(1.06); }
+.access__trigger:hover::before{ box-shadow: 0 0 34px rgba(34, 211, 238, 0.7); }
+.access__trigger:focus-visible{
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+@keyframes accessSpin{
+  to{ transform: rotate(360deg); }
+}
+
+/* Panel desplegable */
+.access__panel{
+  position: absolute;
+  top: calc(100% + 16px);
+  right: 0;
+  z-index: 110;
+  width: min(300px, calc(100vw - 3rem));
+  padding: 22px;
+  border-radius: 22px;
+  background: rgba(14, 16, 34, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+  animation: accessOpen 0.35s var(--ease) both;
+}
+
+@keyframes accessOpen{
+  from{ opacity: 0; transform: translateY(-10px) scale(0.96); }
+  to{ opacity: 1; transform: none; }
+}
+
+.access__title{
+  margin-bottom: 18px;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.access__portals{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Portales */
+.portal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.portal--join{
+  --c: 139, 92, 246;
+  --c-solid: #A78BFA;
+  --c-text: #C4B5FD;
+}
+.portal--enter{
+  --c: 34, 211, 238;
+  --c-solid: #22D3EE;
+  --c-text: #67E8F9;
+}
+
+.portal__orb{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--white);
+  background: radial-gradient(circle, rgba(var(--c), 0.3), rgba(5, 5, 16, 0.92) 72%);
+  border: 2px solid var(--c-solid);
+  box-shadow: 0 0 0 6px rgba(var(--c), 0.12), 0 0 28px rgba(var(--c), 0.5);
+  transition: transform var(--t-med), box-shadow var(--t-med);
+}
+
+.portal__caption{
+  font-size: 0.75rem;
+  color: var(--c-text);
+}
+
+.portal:hover .portal__orb{
+  transform: scale(1.08);
+  box-shadow: 0 0 0 10px rgba(var(--c), 0.18), 0 0 44px rgba(var(--c), 0.8);
+}
+.portal:focus-visible{
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+@media (max-width: 400px){
+  .portal__orb{ width: 88px; height: 88px; font-size: 0.85rem; }
+}
+
 /* 
    18. RESPONSIVE
     */
