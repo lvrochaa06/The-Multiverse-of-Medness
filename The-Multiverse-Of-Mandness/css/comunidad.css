@@ -1,0 +1,643 @@
+/* ==========================================
+   ESTILOS GENERALES DE COMUNIDADES
+========================================== */
+
+.community-page {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+/* ==========================================
+   ENCABEZADO DE LA PÁGINA
+========================================== */
+
+.community-heading {
+    margin-bottom: 30px;
+}
+
+.community-back {
+    display: inline-block;
+    margin-top: 60px;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.community-back:hover {
+    color: #ffffff;
+    transform: translateX(-5px);
+}
+
+.community-heading h1 {
+    font-size: 35px;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.eyebrow {
+    color: #a78bfa;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+
+/* ==========================================
+   DISTRIBUCIÓN DE LAS TRES COLUMNAS
+========================================== */
+
+.community-layout {
+    display: grid;
+
+    grid-template-columns:
+        0.9fr
+        2fr
+        0.9fr;
+
+    gap: 22px;
+
+    align-items: start;
+}
+
+
+/* ==========================================
+   TARJETAS GENERALES
+========================================== */
+
+.community-panel {
+    background: rgba(18, 20, 39, 0.92);
+
+    border: 1px solid rgba(167, 139, 250, 0.18);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+
+    transition: 0.3s;
+}
+
+.community-panel:hover {
+    border-color: rgba(167, 139, 250, 0.4);
+}
+
+
+/* ==========================================
+   COLUMNA IZQUIERDA
+========================================== */
+
+.community-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* ==========================================
+   TARJETA DE INVITACIÓN
+========================================== */
+
+.join-panel {
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.join-panel__symbol {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #7042c4,
+        #30206d
+    );
+
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
+}
+
+.join-panel h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.join-panel p {
+    color: #b9bbca;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.join-panel small {
+    display: block;
+    color: #888ca3;
+    font-size: 11px;
+    margin-top: 15px;
+}
+
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+.btn {
+    display: inline-block;
+
+    text-decoration: none;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    border-radius: 25px;
+
+    transition: 0.3s;
+}
+
+.btn--primary {
+    background: linear-gradient(
+        100deg,
+        #8054db,
+        #592cb4
+    );
+
+    color: #ffffff;
+
+    padding: 12px 20px;
+
+    margin-top: 18px;
+
+    font-size: 13px;
+}
+
+.btn--primary:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 20px rgba(128, 84, 219, 0.4);
+}
+
+
+/* ==========================================
+   TARJETA DE COMENTARIOS
+========================================== */
+
+.comments-panel {
+    padding: 20px;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.panel-heading h2,
+.panel-heading h3 {
+    font-size: 17px;
+}
+
+.panel-heading span {
+    color: #b69aff;
+}
+
+.comments-panel > p {
+    color: #aeb2c3;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.comment-list {
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+    color: #969bad;
+    font-size: 12px;
+}
+
+.comment-form textarea {
+    width: 100%;
+
+    min-height: 90px;
+
+    resize: vertical;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(167, 139, 250, 0.2);
+
+    background: #101225;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    outline: none;
+}
+
+.comment-form textarea:focus {
+    border-color: #9870ed;
+}
+
+.comment-form textarea::placeholder {
+    color: #777d96;
+}
+
+.comment-form button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.comments-panel small {
+    display: block;
+    color: #858ba1;
+    font-size: 10px;
+    margin-top: 12px;
+}
+
+
+/* ==========================================
+   COLUMNA CENTRAL
+========================================== */
+
+.community-info {
+    min-width: 0;
+}
+
+
+/* ==========================================
+   PORTADA DE LA COMUNIDAD
+========================================== */
+
+.community-cover {
+    width: 100%;
+    height: 220px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #21183d;
+}
+
+.community-cover img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter: brightness(0.75);
+}
+
+.community-cover__content {
+    position: absolute;
+
+    bottom: 20px;
+    left: 22px;
+
+    z-index: 1;
+}
+
+.community-cover__content span {
+    background: rgba(100, 65, 180, 0.85);
+
+    color: white;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==========================================
+   INFORMACIÓN DE LA COMUNIDAD
+========================================== */
+
+.community-info__body {
+    padding: 25px;
+}
+
+.community-info__body h2 {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.community-description {
+    color: #bfc1d0;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================
+   ESTADÍSTICAS
+========================================== */
+
+.community-stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    padding: 20px 0;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.stat-item strong {
+    color: #b69aff;
+
+    font-size: 19px;
+}
+
+.stat-item span {
+    color: #969bad;
+
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   DESCRIPCIÓN
+========================================== */
+
+.community-details {
+    padding: 25px 0;
+}
+
+.community-details h3 {
+    font-size: 17px;
+
+    margin-bottom: 12px;
+
+    color: #ffffff;
+}
+
+.community-details p {
+    color: #bfc1d0;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+.community-details ul {
+    padding-left: 20px;
+}
+
+.community-details li {
+    color: #bfc1d0;
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+.community-details li::marker {
+    color: #a78bfa;
+}
+
+
+/* ==========================================
+   PUBLICACIONES
+========================================== */
+
+.community-posts {
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    padding-top: 20px;
+}
+
+.community-posts .panel-heading span {
+    font-size: 10px;
+}
+
+.locked-posts {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    background: rgba(255,255,255,0.025);
+
+    border-radius: 12px;
+
+    margin-top: 15px;
+}
+
+.locked-posts div {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.locked-posts h3 {
+    font-size: 16px;
+
+    margin-bottom: 12px;
+}
+
+.locked-posts p {
+    color: #aeb2c3;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   COLUMNA DERECHA
+========================================== */
+
+.stars-panel {
+    padding: 22px 18px;
+}
+
+.stars-panel > p {
+    color: #aeb2c3;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================
+   MIEMBROS DESTACADOS
+========================================== */
+
+.featured-member {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.featured-member:last-child {
+    border-bottom: none;
+}
+
+.featured-avatar {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #593c91,
+        #252d61
+    );
+
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.featured-member__info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.featured-member__info strong {
+    color: #ffffff;
+
+    font-size: 12px;
+}
+
+.featured-member__info span {
+    color: #969bad;
+
+    font-size: 10px;
+}
+
+
+/* ==========================================
+   RESPONSIVE - TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .community-layout {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .stars-panel {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE - CELULARES
+========================================== */
+
+@media (max-width: 750px) {
+
+    .community-page {
+        width: 94%;
+        margin: 30px auto;
+    }
+
+    .community-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .community-heading h1 {
+        font-size: 27px;
+    }
+
+    .community-cover {
+        height: 160px;
+    }
+
+    .community-info__body {
+        padding: 18px;
+    }
+
+    .community-info__body h2 {
+        font-size: 23px;
+    }
+
+    .community-stats {
+        gap: 8px;
+    }
+
+    .stat-item strong {
+        font-size: 15px;
+    }
+
+    .stat-item span {
+        font-size: 10px;
+    }
+
+    .join-panel,
+    .comments-panel,
+    .stars-panel {
+        padding: 20px;
+    }
+
+}
