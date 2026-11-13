@@ -3,74 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Multiverse of Madness</title>
+    <title>Comunidades - The Multiverse of Madness</title>
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/comunidad.css">
-    
 </head>
 <body>
-    <header class="navbar" id="navbar">
-  <div class="navbar__inner">
-    <a href="../index.html" class="navbar__logo">
-      <span class="navbar__logo-ring" aria-hidden="true"></span>
-      <span class="navbar__logo-text">MULTIVERSE<span class="navbar__logo-accent">OF MADNESS</span></span>
-    </a>
 
-    <nav class="navbar__nav" aria-label="Navegación principal">
-      <a href="../index.html" class="navbar__link">Inicio</a>
-      <a href="eventos.html" class="navbar__link">Eventos</a>
-      <a href="../index.html#foros" class="navbar__link">Foros</a>
-      <a href="contacto.html" class="navbar__link">Contacto</a>
-    </nav>
-
-    <a href="../unete.html" class="btn btn--primary btn--small navbar__cta">Únete</a>
-  </div>
-</header>
-
-
-<!-- 11. FOOTER -->
-
-<footer class="footer">
-  <div class="section-inner footer__grid">
-
-    <div class="footer__brand">
-      <a href="../index.html" class="navbar__logo">
-        <span class="navbar__logo-ring" aria-hidden="true"></span>
-        <span class="navbar__logo-text">MULTIVERSE<span class="navbar__logo-accent">OF MADNESS</span></span>
-      </a>
-      <p class="footer__tagline">Un portal a cada comunidad que te apasiona.</p>
+    <!-- FONDO CÓSMICO -->
+    <div class="cosmic-bg">
+        <div class="stars"></div>
+        <div class="orb orb--purple"></div>
+        <div class="orb orb--blue"></div>
+        <div class="orb orb--cyan"></div>
     </div>
 
-    <div class="footer__col">
-      <h4 class="footer__heading">Plataforma</h4>
-      <a href="../index.html#explora" class="footer__link">Universos</a>
-      <a href="../index.html#eventos" class="footer__link">Eventos</a>
-      <a href="../index.html#comunidades" class="footer__link">Comunidades</a>
-      <a href="../index.html#foros" class="footer__link">Foros</a>
-    </div>
+    <!-- ENCABEZADO -->
+    <header class="navbar">
+        <div class="navbar__inner">
+            <a href="../index.html" class="navbar__logo">
+                <span class="navbar__logo-ring"></span>
+                <span class="navbar__logo-text">
+                    MULTIVERSE
+                    <span class="navbar__logo-accent">OF MADNESS</span>
+                </span>
+            </a>
+            <nav class="navbar__nav">
+                <a href="../index.html" class="navbar__link">Inicio</a>
+                <a href="comunidad.html" class="navbar__link">Comunidad</a>
+                <a href="eventos.html" class="navbar__link">Eventos</a>
+                <a href="contacto.html" class="navbar__link">Contacto</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="footer__col">
-      <h4 class="footer__heading">Compañía</h4>
-      <a href="#" class="footer__link">Sobre nosotros</a>
-      <a href="#" class="footer__link">Términos y condiciones</a>
-      <a href="#" class="footer__link">Privacidad</a>
-      <a href="contacto.html" class="footer__link">Contacto</a>
-    </div>
+    <main class="community-page">
+        <div class="community-heading">
+            <a href="../index.html" class="community-back">← Volver al inicio</a>
+            <p class="eyebrow">THE MULTIVERSE OF MADNESS</p>
+            <h1 class="section-title">Comunidades</h1>
+        </div>
 
-    <div class="footer__col">
-      <h4 class="footer__heading">Síguenos</h4>
-      <div class="footer__socials">
-        <a href="#" class="footer__social" aria-label="Instagram">IG</a>
-        <a href="#" class="footer__social" aria-label="Facebook">FB</a>
-        <a href="#" class="footer__social" aria-label="TikTok">TT</a>
-        <a href="#" class="footer__social" aria-label="X">X</a>
-      </div>
-    </div>
+        <div class="communities__grid">
 
-  </div>
+            <article class="community-card">
+                <div class="community-card__cover">
+                    <img src="../imagenes/anime.jpg" alt="" loading="lazy">
+                </div>
+                <div class="community-card__body">
+                    <h3 class="community-card__title"><a href="anime.html" class="community-card__link">Templo Sagrado<span class="stretched-link" aria-hidden="true"></span></a></h3>
+                    <p class="community-card__meta">980 miembros · Anime</p>
+                </div>
+            </article>
 
-  <div class="footer__bottom">
-    <p>&copy; 2026 The Multiverse of Madness. Todos los derechos reservados.</p>
-  </div>
-</footer>
+            <article class="community-card">
+                <div class="community-card__cover">
+                    <img src="../imagenes/cosplayers.jpg" alt="" loading="lazy">
+                </div>
+                <div class="community-card__body">
+                    <h3 class="community-card__title"><a href="cosplay.html" class="community-card__link">cosplayers<span class="stretched-link" aria-hidden="true"></span></a></h3>
+                    <p class="community-card__meta">890 miembros · cosplay</p>
+                </div>
+            </article>
+
+            <article class="community-card">
+                <div class="community-card__cover">
+                    <img src="../imagenes/gameconsole.jpg" alt="" loading="lazy">
+                </div>
+                <div class="community-card__body">
+                    <h3 class="community-card__title"><a href="video_juegos.html" class="community-card__link">gamers<span class="stretched-link" aria-hidden="true"></span></a></h3>
+                    <p class="community-card__meta">1240 miembros · videojuegos</p>
+                </div>
+            </article>
+
+            <article class="community-card">
+                <div class="community-card__cover">
+                    <img src="../imagenes/tecnologia.jpg" alt="" loading="lazy">
+                </div>
+                <div class="community-card__body">
+                    <h3 class="community-card__title"><a href="tecnologia.html" class="community-card__link">mundo informático<span class="stretched-link" aria-hidden="true"></span></a></h3>
+                    <p class="community-card__meta">930 miembros · tecnología</p>
+                </div>
+            </article>
+
+            <article class="community-card">
+                <div class="community-card__cover">
+                    <img src="../imagenes/libros.jpg" alt="" loading="lazy">
+                </div>
+                <div class="community-card__body">
+                    <h3 class="community-card__title"><a href="libros.html" class="community-card__link">biblioteca<span class="stretched-link" aria-hidden="true"></span></a></h3>
+                    <p class="community-card__meta">540 miembros · libros</p>
+                </div>
+            </article>
+
+            <article class="community-card">
+                <div class="community-card__cover">
+                    <img src="../imagenes/cine.jpg" alt="" loading="lazy">
+                </div>
+                <div class="community-card__body">
+                    <h3 class="community-card__title"><a href="peliculas.html" class="community-card__link">cine mundial<span class="stretched-link" aria-hidden="true"></span></a></h3>
+                    <p class="community-card__meta">760 miembros · cine</p>
+                </div>
+            </article>
+
+            <article class="community-card">
+                <div class="community-card__cover">
+                    <img src="../imagenes/musica.jpg" alt="" loading="lazy">
+                </div>
+                <div class="community-card__body">
+                    <h3 class="community-card__title"><a href="musica.html" class="community-card__link">frecuencia<span class="stretched-link" aria-hidden="true"></span></a></h3>
+                    <p class="community-card__meta">1120 miembros · música</p>
+                </div>
+            </article>
+
+            <article class="community-card">
+                <div class="community-card__cover">
+                    <img src="../imagenes/deportes.jpg" alt="" loading="lazy">
+                </div>
+                <div class="community-card__body">
+                    <h3 class="community-card__title"><a href="deportes.html" class="community-card__link">zona atlética<span class="stretched-link" aria-hidden="true"></span></a></h3>
+                    <p class="community-card__meta">680 miembros · deportes</p>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
 </body>
 </html>
