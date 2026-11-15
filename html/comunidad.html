@@ -1,133 +1,316 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidades - The Multiverse of Madness</title>
+    <title>Comunidades | The Multiverse of Madness</title>
 
-    <!-- ESTILOS -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/comunidad.css">
+    <link rel="stylesheet" href="../css/comunidades.css">
 </head>
-<body>
 
-    <!-- FONDO CÓSMICO -->
-    <div class="cosmic-bg">
-        <div class="stars"></div>
-        <div class="orb orb--purple"></div>
-        <div class="orb orb--blue"></div>
-        <div class="orb orb--cyan"></div>
+
+
+<body class="communities-body">
+
+<!-- BARRA DE NAVEGACIÓN -->
+<header class="navbar">
+    <div class="navbar__inner">
+
+        <a href="../index.html" class="navbar__logo">
+            <span class="navbar__logo-ring"></span>
+
+            <span class="navbar__logo-text">
+                MULTIVERSE
+                <span class="navbar__logo-accent">OF MADNESS</span>
+            </span>
+        </a>
+
+        <nav class="navbar__nav">
+            <a href="../index.html" class="navbar__link">Inicio</a>
+            <a href="comunidad.html" class="navbar__link">Comunidad</a>
+            <a href="eventos.html" class="navbar__link">Eventos</a>
+            <a href="contacto.html" class="navbar__link">Contacto</a>
+        </nav>
+
     </div>
+</header>
 
-    <!-- ENCABEZADO -->
-    <header class="navbar">
-        <div class="navbar__inner">
-            <a href="../index.html" class="navbar__logo">
-                <span class="navbar__logo-ring"></span>
-                <span class="navbar__logo-text">
-                    MULTIVERSE
-                    <span class="navbar__logo-accent">OF MADNESS</span>
+    <main class="communities-home">
+
+        <!-- ENCABEZADO -->
+        <header class="communities-header">
+
+          
+            <div class="header-content">
+                <span class="eyebrow">THE MULTIVERSE OF MADNESS</span>
+
+                <h1>
+                    Explora nuestros
+                    <span>universos</span>
+                </h1>
+
+                <p>
+                    Cada pasión tiene un lugar en este multiverso.
+                    Encuentra tu comunidad, comparte tus gustos
+                    y conoce personas que disfrutan lo mismo que tú.
+                </p>
+
+                <a href="#explorar" class="explore-button">
+                    Explorar comunidades
+                    <span>↓</span>
+                </a>
+            </div>
+
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="header-star star-one">✦</div>
+            <div class="header-star star-two">✧</div>
+            <div class="header-star star-three">✦</div>
+
+        </header>
+
+
+        <!-- COMUNIDADES DISPONIBLES -->
+        <section class="available-section" id="explorar">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">ENCUENTRA TU LUGAR</span>
+                    <h2>Comunidades disponibles</h2>
+                    <p>
+                        Ocho espacios diferentes, un mismo universo
+                        para compartir lo que te apasiona.
+                    </p>
+                </div>
+
+                <span class="community-count">08 UNIVERSOS</span>
+            </div>
+
+
+          
+<div class="communities-grid">
+
+    <!-- ANIME -->
+    <a href="anime.html" class="community-card anime-card">
+        <div class="card-visual">
+            <img src="../imagenes/anime.jpg" alt="Anime y manga">
+            <span class="card-category">ANIMACIÓN JAPONESA</span>
+            <span class="card-number">01</span>
+        </div>
+        <div class="card-content">
+            <h3>Templo Sagrado</h3>
+            <p>
+                Un espacio para compartir nuestra pasión
+                por el anime, el manga y las historias japonesas.
+            </p>
+            <span class="card-link">Explorar comunidad <span>↗</span></span>
+        </div>
+    </a>
+
+
+    <!-- COSPLAY -->
+    <a href="cosplay.html" class="community-card cosplay-card">
+        <div class="card-visual">
+            <img src="../imagenes/cosplayers.jpg" alt="Cosplay y caracterización">
+            <span class="card-category">ARTE Y PERSONAJES</span>
+            <span class="card-number">02</span>
+        </div>
+        <div class="card-content">
+            <h3>Mundo Cosplay</h3>
+            <p>
+                Comparte tus creaciones, caracterizaciones
+                y el arte de dar vida a tus personajes favoritos.
+            </p>
+            <span class="card-link">Explorar comunidad <span>↗</span></span>
+        </div>
+    </a>
+
+
+    <!-- VIDEOJUEGOS -->
+    <a href="video_juegos.html" class="community-card games-card">
+        <div class="card-visual">
+            <img src="../imagenes/gameconsole.jpg" alt="Videojuegos">
+            <span class="card-category">VIDEOJUEGOS</span>
+            <span class="card-number">03</span>
+        </div>
+        <div class="card-content">
+            <h3>Gamers</h3>
+            <p>
+                Un lugar para hablar de videojuegos,
+                compartir experiencias y descubrir nuevos mundos.
+            </p>
+            <span class="card-link">Explorar comunidad <span>↗</span></span>
+        </div>
+    </a>
+
+
+    <!-- TECNOLOGIA -->
+    <a href="tecnologia.html" class="community-card technology-card">
+        <div class="card-visual">
+            <img src="../imagenes/tecnologia.jpg" alt="Tecnología y programación">
+            <span class="card-category">TECNOLOGÍA</span>
+            <span class="card-number">04</span>
+        </div>
+        <div class="card-content">
+            <h3>Mundo Informático</h3>
+            <p>
+                Comparte ideas sobre programación,
+                innovación, ciencia y tecnología.
+            </p>
+            <span class="card-link">Explorar comunidad <span>↗</span></span>
+        </div>
+    </a>
+
+
+    <!-- LIBROS -->
+    <a href="libros.html" class="community-card books-card">
+        <div class="card-visual">
+            <img src="../imagenes/libros.jpg" alt="Libros y literatura">
+            <span class="card-category">LECTURA Y LITERATURA</span>
+            <span class="card-number">05</span>
+        </div>
+        <div class="card-content">
+            <h3>Biblioteca</h3>
+            <p>
+                Un rincón para lectores, historias,
+                mundos imaginarios y aventuras entre páginas.
+            </p>
+            <span class="card-link">Explorar comunidad <span>↗</span></span>
+        </div>
+    </a>
+
+
+    <!-- PELICULAS -->
+    <a href="peliculas.html" class="community-card movies-card">
+        <div class="card-visual">
+            <img src="../imagenes/cine.jpg" alt="Películas y cine">
+            <span class="card-category">CINE Y SERIES</span>
+            <span class="card-number">06</span>
+        </div>
+        <div class="card-content">
+            <h3>Cine Mundial</h3>
+            <p>
+                Comparte tus películas, series,
+                géneros y escenas favoritas.
+            </p>
+            <span class="card-link">Explorar comunidad <span>↗</span></span>
+        </div>
+    </a>
+
+
+    <!-- MUSICA -->
+    <a href="musica.html" class="community-card music-card">
+        <div class="card-visual">
+            <img src="../imagenes/musica.jpg" alt="Música y artistas">
+            <span class="card-category">MÚSICA</span>
+            <span class="card-number">07</span>
+        </div>
+        <div class="card-content">
+            <h3>Frecuencia</h3>
+            <p>
+                Un espacio para descubrir canciones,
+                artistas, ritmos y compartir lo que escuchas.
+            </p>
+            <span class="card-link">Explorar comunidad <span>↗</span></span>
+        </div>
+    </a>
+
+
+    <!-- DEPORTES -->
+    <a href="deportes.html" class="community-card sports-card">
+        <div class="card-visual">
+            <img src="../imagenes/deportes.jpg" alt="Deportes y actividad física">
+            <span class="card-category">DEPORTE Y MOVIMIENTO</span>
+            <span class="card-number">08</span>
+        </div>
+        <div class="card-content">
+            <h3>Zona Atlética</h3>
+            <p>
+                Comparte tu interés por los deportes,
+                las competencias y la actividad física.
+            </p>
+            <span class="card-link">Explorar comunidad <span>↗</span></span>
+        </div>
+    </a>
+
+</div>
+ </section>
+
+
+        <!-- PRÓXIMAMENTE -->
+        <section class="coming-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">NUEVOS UNIVERSOS</span>
+                    <h2>Próximamente...</h2>
+                    <p>
+                        El multiverso sigue creciendo.
+                        Muy pronto tendremos nuevos espacios para ti.
+                    </p>
+                </div>
+
+                <span class="coming-indicator">
+                    <span></span> EN EXPANSIÓN
                 </span>
-            </a>
-            <nav class="navbar__nav">
-                <a href="../index.html" class="navbar__link">Inicio</a>
-                <a href="comunidad.html" class="navbar__link">Comunidad</a>
-                <a href="eventos.html" class="navbar__link">Eventos</a>
-                <a href="contacto.html" class="navbar__link">Contacto</a>
-            </nav>
-        </div>
-    </header>
+            </div>
 
-    <main class="community-page">
-        <div class="community-heading">
-            <a href="../index.html" class="community-back">← Volver al inicio</a>
-            <p class="eyebrow">THE MULTIVERSE OF MADNESS</p>
-            <h1 class="section-title">Comunidades</h1>
-        </div>
 
-        <div class="communities__grid">
+            <div class="coming-grid">
 
-            <article class="community-card">
-                <div class="community-card__cover">
-                    <img src="../imagenes/anime.jpg" alt="" loading="lazy">
-                </div>
-                <div class="community-card__body">
-                    <h3 class="community-card__title"><a href="anime.html" class="community-card__link">Templo Sagrado<span class="stretched-link" aria-hidden="true"></span></a></h3>
-                    <p class="community-card__meta">980 miembros · Anime</p>
-                </div>
-            </article>
+                <article class="coming-card">
+                    <span class="coming-icon">🎨</span>
+                    <div>
+                        <span class="coming-number">UNIVERSO 09</span>
+                        <h3>Arte y Dibujo</h3>
+                        <p>Creatividad, ilustración y expresión artística.</p>
+                    </div>
+                    <span class="coming-lock">✧</span>
+                </article>
 
-            <article class="community-card">
-                <div class="community-card__cover">
-                    <img src="../imagenes/cosplayers.jpg" alt="" loading="lazy">
-                </div>
-                <div class="community-card__body">
-                    <h3 class="community-card__title"><a href="cosplay.html" class="community-card__link">cosplayers<span class="stretched-link" aria-hidden="true"></span></a></h3>
-                    <p class="community-card__meta">890 miembros · cosplay</p>
-                </div>
-            </article>
+                <article class="coming-card">
+                    <span class="coming-icon">🔭</span>
+                    <div>
+                        <span class="coming-number">UNIVERSO 10</span>
+                        <h3>Ciencia y Espacio</h3>
+                        <p>Descubre los misterios del universo y la ciencia.</p>
+                    </div>
+                    <span class="coming-lock">✧</span>
+                </article>
 
-            <article class="community-card">
-                <div class="community-card__cover">
-                    <img src="../imagenes/gameconsole.jpg" alt="" loading="lazy">
-                </div>
-                <div class="community-card__body">
-                    <h3 class="community-card__title"><a href="video_juegos.html" class="community-card__link">gamers<span class="stretched-link" aria-hidden="true"></span></a></h3>
-                    <p class="community-card__meta">1240 miembros · videojuegos</p>
-                </div>
-            </article>
+                <article class="coming-card">
+                    <span class="coming-icon">🧵</span>
+                    <div>
+                        <span class="coming-number">UNIVERSO 11</span>
+                        <h3>Manualidades</h3>
+                        <p>Ideas, proyectos y creaciones hechas a mano.</p>
+                    </div>
+                    <span class="coming-lock">✧</span>
+                </article>
 
-            <article class="community-card">
-                <div class="community-card__cover">
-                    <img src="../imagenes/tecnologia.jpg" alt="" loading="lazy">
-                </div>
-                <div class="community-card__body">
-                    <h3 class="community-card__title"><a href="tecnologia.html" class="community-card__link">mundo informático<span class="stretched-link" aria-hidden="true"></span></a></h3>
-                    <p class="community-card__meta">930 miembros · tecnología</p>
-                </div>
-            </article>
+                <article class="coming-card">
+                    <span class="coming-icon">🌍</span>
+                    <div>
+                        <span class="coming-number">UNIVERSO 12</span>
+                        <h3>Culturas del Mundo</h3>
+                        <p>Conoce tradiciones, idiomas y lugares nuevos.</p>
+                    </div>
+                    <span class="coming-lock">✧</span>
+                </article>
 
-            <article class="community-card">
-                <div class="community-card__cover">
-                    <img src="../imagenes/libros.jpg" alt="" loading="lazy">
-                </div>
-                <div class="community-card__body">
-                    <h3 class="community-card__title"><a href="libros.html" class="community-card__link">biblioteca<span class="stretched-link" aria-hidden="true"></span></a></h3>
-                    <p class="community-card__meta">540 miembros · libros</p>
-                </div>
-            </article>
+            </div>
+        </section>
 
-            <article class="community-card">
-                <div class="community-card__cover">
-                    <img src="../imagenes/cine.jpg" alt="" loading="lazy">
-                </div>
-                <div class="community-card__body">
-                    <h3 class="community-card__title"><a href="peliculas.html" class="community-card__link">cine mundial<span class="stretched-link" aria-hidden="true"></span></a></h3>
-                    <p class="community-card__meta">760 miembros · cine</p>
-                </div>
-            </article>
 
-            <article class="community-card">
-                <div class="community-card__cover">
-                    <img src="../imagenes/musica.jpg" alt="" loading="lazy">
-                </div>
-                <div class="community-card__body">
-                    <h3 class="community-card__title"><a href="musica.html" class="community-card__link">frecuencia<span class="stretched-link" aria-hidden="true"></span></a></h3>
-                    <p class="community-card__meta">1120 miembros · música</p>
-                </div>
-            </article>
+        <!-- MENSAJE FINAL -->
+        <footer class="communities-footer">
+            <span class="footer-symbol">✦</span>
+            <p>Un universo para cada pasión. Un multiverso para todos.</p>
+            <span class="footer-copy">THE MULTIVERSE OF MADNESS</span>
+        </footer>
 
-            <article class="community-card">
-                <div class="community-card__cover">
-                    <img src="../imagenes/deportes.jpg" alt="" loading="lazy">
-                </div>
-                <div class="community-card__body">
-                    <h3 class="community-card__title"><a href="deportes.html" class="community-card__link">zona atlética<span class="stretched-link" aria-hidden="true"></span></a></h3>
-                    <p class="community-card__meta">680 miembros · deportes</p>
-                </div>
-            </article>
-
-        </div>
     </main>
 
 </body>
