@@ -1,5 +1,3 @@
-
-
 /*
    1. VARIABLES CSS */
 :root{
@@ -324,3 +322,30 @@ button:focus-visible{
 
   .footer__grid{ grid-template-columns: 1fr; gap: 2rem; }
 }
+
+/* ===== Formulario de contacto ===== */
+.contacto-main { position: relative; isolation: isolate; overflow: hidden; min-height: 100vh; display: flex;
+  justify-content: center; align-items: center; padding: 110px 16px 48px; background: var(--bg-void); }
+/* Video de fondo + capa oscura para que el formulario se lea bien */
+.contacto-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; pointer-events: none; }
+.contacto-main::before { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(5,5,16,.75) 0%, rgba(5,5,16,.55) 50%, rgba(5,5,16,.85) 100%); }
+@media (prefers-reduced-motion: reduce) { .contacto-video { display: none; } }
+.contacto-card { width: 100%; max-width: 560px; background: rgba(17,24,39,.72); backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); border: var(--border-glow);
+  border-radius: var(--radius-lg); padding: 32px; color: var(--text-main); }
+.contacto-eyebrow { color: var(--cyan); letter-spacing: .2em; font-size: .75rem; margin: 0; }
+.contacto-card h1 { font-family: var(--font-display); margin: 8px 0; }
+.contacto-intro { color: var(--text-muted); margin-bottom: 20px; }
+.contacto-form { display: grid; gap: 8px; }
+.contacto-form label { font-size: .85rem; color: var(--text-muted); margin-top: 8px; }
+.contacto-form input, .contacto-form textarea { width: 100%; padding: 12px; border-radius: var(--radius-sm);
+  border: var(--border-soft); background: var(--bg-deep); color: var(--text-main); font: inherit; }
+.contacto-form input:focus, .contacto-form textarea:focus { outline: 2px solid var(--purple); }
+.contacto-btn { margin-top: 16px; padding: 14px; border: 0; border-radius: 999px; cursor: pointer; font-weight: 700;
+  color: #fff; background: var(--gradient-portal); }
+.contacto-btn:disabled { opacity: .6; cursor: wait; }
+.form-mensaje { margin: 0 0 16px; padding: 12px 16px; border-radius: 10px; font-size: .9rem; }
+.form-mensaje--error { background: rgba(239,68,68,.12); border: 1px solid #ef4444; color: #fecaca; }
+.form-mensaje--ok { background: rgba(34,211,238,.12); border: 1px solid #22d3ee; color: #a5f3fc; }
+@media (max-width: 600px) { .contacto-card { padding: 24px 18px; } }

@@ -1,20 +1,18 @@
-
 <?php
-session_start();
+// Funciones para proteger páginas. Uso: require_once "verificar_sesion.php"; verificarAdmin();
+if (session_status() === PHP_SESSION_NONE) session_start();
 
-// Comprobar si hay una sesión iniciada
 function verificarSesion() {
     if (!isset($_SESSION["id_usuario"])) {
-        header("Location: ../iniciarsesion.html");
+        header("Location: ../login.html");
         exit;
     }
 }
 
-// Comprobar si el usuario es administrador
 function verificarAdmin() {
-    if (!isset($_SESSION["rol"]) || $_SESSION["rol"] != "admin") {
+    verificarSesion();
+    if (($_SESSION["rol"] ?? "") !== "admin") {
         header("Location: ../index.html");
         exit;
     }
 }
-?>

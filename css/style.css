@@ -1310,3 +1310,8 @@ section{
 
 .final-cta.section--light{ isolation: isolate; }
 .final-cta.section--light .final-cta__glow{ opacity: 0.25; }
+
+/* Avatar con inicial (reemplaza las fotos de testimonios) */
+.testimonial-card__avatar { width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0; display: inline-flex;
+  align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; color: #fff;
+  background: var(--gradient-portal); }

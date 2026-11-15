@@ -674,3 +674,10 @@ a {
 
 }
 
+
+
+/* Mensajes de error / éxito de formularios */
+.form-mensaje { margin: 0 0 16px; padding: 12px 16px; border-radius: 10px; font-size: .9rem; }
+.form-mensaje--error { background: rgba(239,68,68,.12); border: 1px solid #ef4444; color: #fecaca; }
+.form-mensaje--ok { background: rgba(34,211,238,.12); border: 1px solid #22d3ee; color: #a5f3fc; }
+.btn-entrar:disabled { opacity: .6; cursor: wait; }
