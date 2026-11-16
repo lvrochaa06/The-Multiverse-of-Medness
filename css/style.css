@@ -1315,3 +1315,91 @@ section{
 .testimonial-card__avatar { width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0; display: inline-flex;
   align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; color: #fff;
   background: var(--gradient-portal); }
+
+  
+/* =========================================
+   VIDEO ANIMADO DE FONDO
+   ========================================= */
+
+/* Fondo general de la página */
+body {
+    position: relative;
+    background: #080D1B;
+}
+
+/* Video que permanece detrás del contenido */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* El contenido queda delante del video */
+body > *:not(.background-video) {
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================
+   SECCIONES QUE DEJAN VER EL VIDEO
+   ========================================= */
+
+.section--light {
+    position: relative;
+
+    background: rgba(8, 13, 27, 0.48);
+
+    color: #F4F7FF;
+
+    --text-main: #F4F7FF;
+    --text-muted: #C0CBE0;
+    --text-faint: #AAB8D0;
+}
+
+/* =========================================
+   SECCIONES QUE CONSERVAN EL AZUL
+   ========================================= */
+
+/* Las secciones que no tengan section--light
+   conservan sus propios fondos. */
+
+.section--light > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Mejora la lectura del texto */
+.section--light .section-title,
+.section--light .section-subtitle {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================
+   COMPATIBILIDAD CON CELULARES
+   ========================================= */
+
+@media (max-width: 600px) {
+    .background-video {
+        object-position: center;
+    }
+}
+
+/* Si el visitante prefiere menos movimiento,
+   ocultamos el video y dejamos el fondo azul. */
+
+@media (prefers-reduced-motion: reduce) {
+    .background-video {
+        display: none;
+    }
+}
+
+  
+  
