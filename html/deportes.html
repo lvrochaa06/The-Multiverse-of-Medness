@@ -6,8 +6,13 @@
     <title>Deportes - The Multiverse of Madness</title>
 
     <!-- ESTILOS -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Orbitron:wght@600;800;900&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/comunidad.css">
+    <link rel="stylesheet" href="../css/nav-movil.css">
+    <link rel="stylesheet" href="../css/yalu.css">
 </head>
 <body>
 
@@ -29,12 +34,14 @@
                     <span class="navbar__logo-accent">OF MADNESS</span>
                 </span>
             </a>
-            <nav class="navbar__nav">
-                <a href="../index.html" class="navbar__link">Inicio</a>
-                <a href="comunidad.html" class="navbar__link">Comunidad</a>
-                <a href="eventos.html" class="navbar__link">Eventos</a>
-                <a href="contacto.html" class="navbar__link">Contacto</a>
-            </nav>
+            <nav class="navbar__nav" aria-label="Navegación principal">
+      <a href="../index.html" class="navbar__link">Inicio</a>
+      <a href="../html/eventos.html" class="navbar__link">Eventos</a>
+      <a href="../html/comunidad.html" class="navbar__link is-active">Comunidades</a>
+      <a href="../php/foros.php" class="navbar__link">Foros</a>
+      <a href="../html/contacto.html" class="navbar__link">Contacto</a>
+    </nav>
+    <a href="../login.html" class="btn btn--ghost btn--small navbar__cta">Entrar</a>
         </div>
     </header>
 
@@ -220,5 +227,7 @@
         </div>
     </main>
 
+<script src="../js/nav.js" defer></script>
+<script src="../js/yalu.js" data-news="false" defer></script>
 </body>
 </html>

@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comunidades | The Multiverse of Madness</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Orbitron:wght@600;800;900&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/comunidades.css">
+    <link rel="stylesheet" href="../css/nav-movil.css">
+    <link rel="stylesheet" href="../css/yalu.css">
 </head>
 
 
@@ -27,12 +32,14 @@
             </span>
         </a>
 
-        <nav class="navbar__nav">
-            <a href="../index.html" class="navbar__link">Inicio</a>
-            <a href="comunidad.html" class="navbar__link">Comunidad</a>
-            <a href="eventos.html" class="navbar__link">Eventos</a>
-            <a href="contacto.html" class="navbar__link">Contacto</a>
-        </nav>
+        <nav class="navbar__nav" aria-label="Navegación principal">
+      <a href="../index.html" class="navbar__link">Inicio</a>
+      <a href="../html/eventos.html" class="navbar__link">Eventos</a>
+      <a href="../html/comunidad.html" class="navbar__link is-active">Comunidades</a>
+      <a href="../php/foros.php" class="navbar__link">Foros</a>
+      <a href="../html/contacto.html" class="navbar__link">Contacto</a>
+    </nav>
+    <a href="../login.html" class="btn btn--ghost btn--small navbar__cta">Entrar</a>
 
     </div>
 </header>
@@ -313,5 +320,33 @@
 
     </main>
 
+<script>
+/* Comunidades creadas desde el panel admin: se agregan al listado automáticamente */
+(function () {
+  var fijas = ['anime','cosplay','video_juegos','tecnologia','libros','peliculas','musica','deportes'];
+  var grid = document.querySelector('.communities-grid'), cuenta = document.querySelector('.community-count');
+  if (!grid) return;
+  fetch('../php/api_comunidades.php').then(function (r) { return r.json(); }).then(function (lista) {
+    var n = fijas.length;
+    lista.forEach(function (c) {
+      if (fijas.indexOf(c.slug) > -1) return;
+      n++;
+      var a = document.createElement('a'); a.className = 'community-card'; a.href = '../php/comunidad.php?slug=' + encodeURIComponent(c.slug);
+      var v = document.createElement('div'); v.className = 'card-visual';
+      var img = document.createElement('img'); img.src = '../imagenes/' + c.imagen; img.alt = c.nombre; v.appendChild(img);
+      var cat = document.createElement('span'); cat.className = 'card-category'; cat.textContent = String(c.categoria).toUpperCase(); v.appendChild(cat);
+      var num = document.createElement('span'); num.className = 'card-number'; num.textContent = (n < 10 ? '0' : '') + n; v.appendChild(num);
+      var b = document.createElement('div'); b.className = 'card-content';
+      var h = document.createElement('h3'); h.textContent = c.nombre;
+      var p = document.createElement('p'); p.textContent = c.descripcion;
+      var l = document.createElement('span'); l.className = 'card-link'; l.textContent = 'Explorar comunidad ↗';
+      b.appendChild(h); b.appendChild(p); b.appendChild(l); a.appendChild(v); a.appendChild(b); grid.appendChild(a);
+    });
+    if (cuenta) cuenta.textContent = (n < 10 ? '0' : '') + n + ' UNIVERSOS';
+  }).catch(function () {});
+})();
+</script>
+<script src="../js/nav.js" defer></script>
+<script src="../js/yalu.js" data-news="false" defer></script>
 </body>
 </html>

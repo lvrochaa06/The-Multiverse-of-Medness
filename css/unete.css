@@ -3,14 +3,14 @@
 ================================== */
 
 :root {
-    --bg-void: #090B18;
-    --bg-panel: #111827;
+    --bg-void: #0B1521;
+    --bg-panel: #111E31;
 
-    --purple: #8B5CF6;
-    --purple-deep: #6D28D9;
-    --cyan: #22D3EE;
+    --purple: #B65BDE;
+    --purple-deep: #8E3DB8;
+    --cyan: #3DE6E1;
 
-    --white: #F5F6FA;
+    --white: #F4F8FB;
     --text-muted: #A1A1B5;
 }
 
@@ -31,7 +31,7 @@ html {
 body {
     background: #101114;
     color: #F5F5F5;
-    font-family: 'Inter', sans-serif;
+    font-family: 'DM Sans', 'Segoe UI', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -107,7 +107,7 @@ a {
     display: flex;
     flex-direction: column;
 
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
     font-size: 0.9rem;
 
     line-height: 1.2;
@@ -188,9 +188,9 @@ a {
     background:
         linear-gradient(
             90deg,
-            rgba(5, 5, 16, 0.94),
+            rgba(7, 14, 25, 0.94),
             rgba(9, 11, 24, 0.82),
-            rgba(5, 5, 16, 0.94)
+            rgba(7, 14, 25, 0.94)
         );
     z-index: -2;
 }
@@ -290,7 +290,7 @@ a {
 
     padding: 23px 25px;
 
-    border: 1px solid rgba(139, 92, 246, 0.35);
+    border: 1px solid rgba(182, 91, 222, 0.35);
 
     border-radius: 16px;
 
@@ -438,7 +438,7 @@ a {
 
     border-radius: 9px;
 
-    background: rgba(5, 5, 16, 0.65);
+    background: rgba(7, 14, 25, 0.65);
 
     color: var(--white);
 
@@ -457,7 +457,7 @@ a {
 .input-group input:focus {
     border-color: var(--cyan);
 
-    box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+    box-shadow: 0 0 0 3px rgba(61, 230, 225, 0.1);
 }
 
 
@@ -490,7 +490,7 @@ a {
 .btn-register:hover {
     transform: translateY(-2px);
 
-    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 10px 30px rgba(182, 91, 222, 0.3);
 }
 
 
@@ -679,5 +679,5 @@ a {
 /* Mensajes de error / éxito de formularios */
 .form-mensaje { margin: 0 0 16px; padding: 12px 16px; border-radius: 10px; font-size: .9rem; }
 .form-mensaje--error { background: rgba(239,68,68,.12); border: 1px solid #ef4444; color: #fecaca; }
-.form-mensaje--ok { background: rgba(34,211,238,.12); border: 1px solid #22d3ee; color: #a5f3fc; }
+.form-mensaje--ok { background: rgba(61,230,225,.12); border: 1px solid #22d3ee; color: #a5f3fc; }
 .btn-entrar:disabled { opacity: .6; cursor: wait; }

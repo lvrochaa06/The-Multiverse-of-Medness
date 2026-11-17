@@ -1,4 +1,3 @@
-
 <?php
 // Plantilla para mostrar las comunidades
 require_once __DIR__ . '/conexion.php';
@@ -54,8 +53,13 @@ $parrafos = array_filter(array_map('trim', explode("\n", $c['sobre'])));
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= e($c['nombre']) ?> - The Multiverse of Madness</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Orbitron:wght@600;800;900&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/comunidad.css">
+    <link rel="stylesheet" href="../css/nav-movil.css">
+    <link rel="stylesheet" href="../css/yalu.css">
 </head>
 <body>
 
@@ -72,12 +76,14 @@ $parrafos = array_filter(array_map('trim', explode("\n", $c['sobre'])));
                 <span class="navbar__logo-ring"></span>
                 <span class="navbar__logo-text">MULTIVERSE <span class="navbar__logo-accent">OF MADNESS</span></span>
             </a>
-            <nav class="navbar__nav">
-                <a href="../index.html" class="navbar__link">Inicio</a>
-                <a href="../html/comunidad.html" class="navbar__link">Comunidad</a>
-                <a href="../html/eventos.html" class="navbar__link">Eventos</a>
-                <a href="../html/contacto.html" class="navbar__link">Contacto</a>
-            </nav>
+            <nav class="navbar__nav" aria-label="Navegación principal">
+      <a href="../index.html" class="navbar__link">Inicio</a>
+      <a href="../html/eventos.html" class="navbar__link">Eventos</a>
+      <a href="../html/comunidad.html" class="navbar__link is-active">Comunidades</a>
+      <a href="../php/foros.php" class="navbar__link">Foros</a>
+      <a href="../html/contacto.html" class="navbar__link">Contacto</a>
+    </nav>
+    <a href="../login.html" class="btn btn--ghost btn--small navbar__cta">Entrar</a>
         </div>
     </header>
 
@@ -97,7 +103,7 @@ $parrafos = array_filter(array_map('trim', explode("\n", $c['sobre'])));
                     <p class="eyebrow">ENCUENTRA TU UNIVERSO</p>
                     <h2>¡Te estamos esperando!</h2>
                     <p><?= e($c['texto_union']) ?></p>
-                    <a href="../iniciarsesion.html" class="btn btn--primary">Unirme a la comunidad</a>
+                    <a href="../login.html" class="btn btn--primary">Unirme a la comunidad</a>
                     <small>Para unirte necesitas tener una cuenta.</small>
                 </section>
 
@@ -191,5 +197,7 @@ $parrafos = array_filter(array_map('trim', explode("\n", $c['sobre'])));
         </div>
     </main>
 
+<script src="../js/nav.js" defer></script>
+<script src="../js/yalu.js" data-news="false" defer></script>
 </body>
 </html>
