@@ -715,7 +715,7 @@ section{
 .event-card__date{
   position: absolute;
   top: 1rem; left: 1rem;
-  background: rgba(5,5,16,0.65);
+  background: rgba(5,5,16);
   backdrop-filter: blur(10px);
   border: var(--border-soft);
   border-radius: var(--radius-sm);
@@ -753,7 +753,7 @@ section{
 
 .community-card{
   position: relative;
-  background: rgba(255,255,255,0.03);
+  background: rgb(255, 255, 255);
   border: var(--border-soft);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -798,7 +798,7 @@ section{
   padding: 2.5rem 1.5rem;
   border-radius: var(--radius-md);
   border: var(--border-soft);
-  background: linear-gradient(160deg, rgba(255,255,255,0.04), transparent);
+  background: linear-gradient(160deg, rgba(20, 1, 1, 0.04), transparent);
 }
 
 .step__icon{
@@ -876,7 +876,7 @@ section{
 }
 
 .testimonial-card{
-  background: rgba(255,255,255,0.05);
+  background: rgba(5, 2, 20, 0.116);
   border: var(--border-soft);
   border-radius: var(--radius-md);
   padding: 2.2rem;
@@ -1316,90 +1316,339 @@ section{
   align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; color: #fff;
   background: var(--gradient-portal); }
 
-  
-/* =========================================
-   VIDEO ANIMADO DE FONDO
-   ========================================= */
 
-/* Fondo general de la página */
+
+/* =====================================================
+   FONDO DE VIDEO Y TRANSPARENCIAS DEL INDEX
+   ===================================================== */
+
 body {
-    position: relative;
-    background: #080D1B;
+  position: relative;
+  background: #080D1B;
 }
 
-/* Video que permanece detrás del contenido */
 .background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    z-index: 0;
-    pointer-events: none;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* El contenido queda delante del video */
+/* El contenido normal queda por encima del video. */
 body > *:not(.background-video) {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
-/* =========================================
-   SECCIONES QUE DEJAN VER EL VIDEO
-   ========================================= */
-
-.section--light {
-    position: relative;
-
-    background: rgba(8, 13, 27, 0.48);
-
-    color: #F4F7FF;
-
-    --text-main: #F4F7FF;
-    --text-muted: #C0CBE0;
-    --text-faint: #AAB8D0;
+/* Las secciones que antes eran claras dejan ver la galaxia. */
+.universes.section--light,
+.communities.section--light {
+  background: rgba(3, 10, 46, 0.637);
+  color: #F5F6FA;
+  --text-main: #F5F6FA;
+  --text-muted: #D5DCEE;
+  --text-faint: #B8C3D8;
+  --border-soft: 1px solid rgba(255,255,255,0.22);
 }
 
-/* =========================================
-   SECCIONES QUE CONSERVAN EL AZUL
-   ========================================= */
-
-/* Las secciones que no tengan section--light
-   conservan sus propios fondos. */
-
-.section--light > * {
-    position: relative;
-    z-index: 1;
+.universes.section--light .eyebrow,
+.communities.section--light .eyebrow {
+  color: #B9A1FF;
 }
 
-/* Mejora la lectura del texto */
-.section--light .section-title,
-.section--light .section-subtitle {
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+.universes.section--light .section-title,
+.communities.section--light .section-title,
+.universes.section--light .section-subtitle,
+.communities.section--light .section-subtitle {
+  color: #F5F6FA;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
 }
 
-/* =========================================
-   COMPATIBILIDAD CON CELULARES
-   ========================================= */
+/* Las tarjetas claras siguen siendo claras, pero translúcidas.
+   La galaxia se alcanza a notar suavemente detrás de ellas. */
+.universes.section--light .uni-card,
+.communities.section--light .community-card {
+  background: rgb(242, 241, 245);
+  border: 1px solid rgba(255,255,255);
+  color: #ffffff;
+  --text-main: #111827;
+  --text-muted: #475569;
+  --text-faint: #64748B;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.universes.section--light .uni-card__title,
+.universes.section--light .uni-card__link,
+.communities.section--light .community-card__title,
+.communities.section--light .community-card__link {
+  color: #111827;
+}
+
+.universes.section--light .uni-card__desc,
+.communities.section--light .community-card__meta {
+  color: #475569;
+}
+
+.universes.section--light .uni-card:hover,
+.communities.section--light .community-card:hover {
+  background: rgba(255, 255, 255, 0.507);
+  border-color: rgba(34,211,238,0.65);
+  box-shadow: 0 18px 42px rgba(1, 2, 2, 0.575);
+}
+
+/* Las secciones que ya eran oscuras/azules permanecen así.
+   La galaxia solo se filtra de forma muy tenue. */
+.about,
+.events,
+.how-it-works,
+.testimonials {
+  background: rgba(15, 3, 43, 0.877);
+}
+
+.stats.section--light {
+  background: rgba(3, 10, 46, 0.637);
+  color: #F5F6FA;
+  --text-main: #ffffff;
+  --text-muted: #ffffff;
+  --text-faint: #07142b;
+
+}
+
+.stats.section--light .stat__number {
+  background: linear-gradient(90deg, #A78BFA, #22D3EE);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.final-cta.section--light {
+  background: rgba(3, 10, 46, 0.637);
+  color: #F5F6FA;
+  --text-main: #ffffff;
+  --text-muted: #ffffff;
+  isolation: isolate;
+}
+
+
+
+/* =====================================================
+   CHATBOT YALU
+   ===================================================== */
+
+.yalu-launcher {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 18px 9px 9px;
+  border: 1px solid rgba(34,211,238,0.58);
+  border-radius: 50px;
+  background: linear-gradient(135deg,#101936,#24164A);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(34,211,238,0.22);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.yalu-launcher:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(139,92,246,0.5);
+}
+
+.yalu-launcher img {
+  width: 50px;
+  height: 43px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #080D1B;
+}
+
+.yalu-launcher[hidden] { display: none; }
+
+.yalu-chat {
+  position: fixed;
+  right: 25px;
+  bottom: 95px;
+  z-index: 1001;
+  width: min(370px, calc(100vw - 30px));
+  height: 490px;
+  max-height: calc(100vh - 125px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(34,211,238,0.35);
+  border-radius: 20px;
+  background: #0B1023;
+  box-shadow: 0 15px 55px rgba(0,0,0,0.55);
+}
+
+.yalu-chat[hidden] { display: none; }
+
+.yalu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: linear-gradient(110deg,#101D3D,#30205B);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.yalu-header__identity {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.yalu-header__identity img {
+  width: 43px;
+  height: 43px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #080D1B;
+}
+
+.yalu-header__identity h2 {
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-family: var(--font-heading);
+}
+
+.yalu-header__identity span {
+  color: #A9DDF0;
+  font-size: 0.75rem;
+}
+
+.yalu-close {
+  border: 0;
+  background: transparent;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.yalu-messages {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 14px;
+  overflow-y: auto;
+  background: radial-gradient(circle at center,rgba(75,45,135,0.15),transparent 70%),#0B1023;
+}
+
+.yalu-messages::before {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: url("../imagenes/yalu.jpg") center / contain no-repeat;
+  opacity: 0.055;
+  pointer-events: none;
+}
+
+.yalu-message {
+  position: relative;
+  z-index: 1;
+  max-width: 85%;
+  padding: 11px 14px;
+  border-radius: 15px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.yalu-message--bot {
+  align-self: flex-start;
+  background: #192746;
+  border: 1px solid rgba(34,211,238,0.15);
+  color: #EAF4FF;
+  border-bottom-left-radius: 4px;
+}
+
+.yalu-message--user {
+  align-self: flex-end;
+  background: linear-gradient(135deg,#5533A5,#285B9B);
+  color: #FFFFFF;
+  border-bottom-right-radius: 4px;
+}
+
+.yalu-suggestions {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  padding: 9px 12px;
+  background: #0B1023;
+}
+
+.yalu-suggestions button {
+  padding: 7px 10px;
+  border: 1px solid rgba(139,92,246,0.5);
+  border-radius: 20px;
+  background: rgba(139,92,246,0.12);
+  color: #D8C9FF;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.yalu-form {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  background: #10182D;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.yalu-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 11px 13px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 25px;
+  outline: none;
+  background: #080D1B;
+  color: #FFFFFF;
+}
+
+.yalu-form input:focus { border-color: #22D3EE; }
+
+.yalu-form button {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#8B5CF6,#22D3EE);
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
 
 @media (max-width: 600px) {
-    .background-video {
-        object-position: center;
-    }
+  .background-video { object-position: center; }
+  .yalu-launcher { right: 14px; bottom: 14px; }
+  .yalu-chat {
+    right: 15px;
+    bottom: 82px;
+    height: min(490px, calc(100vh - 105px));
+  }
 }
-
-/* Si el visitante prefiere menos movimiento,
-   ocultamos el video y dejamos el fondo azul. */
 
 @media (prefers-reduced-motion: reduce) {
-    .background-video {
-        display: none;
-    }
+  .background-video { display: none; }
 }
-
-  
-  
