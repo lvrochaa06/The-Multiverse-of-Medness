@@ -13,20 +13,48 @@
 <link rel="stylesheet" href="../css/yalu.css">
 </head>
 <body>
-<header class="navbar">
+<header class="navbar" id="navbar">
   <div class="navbar__inner">
-    <a href="../index.html" class="navbar__logo">
+    <a href="#" class="navbar__logo">
       <span class="navbar__logo-ring" aria-hidden="true"></span>
       <span class="navbar__logo-text">MULTIVERSE<span class="navbar__logo-accent">OF MADNESS</span></span>
     </a>
+
     <nav class="navbar__nav" aria-label="Navegación principal">
-      <a href="../index.html" class="navbar__link">Inicio</a>
-      <a href="eventos.html" class="navbar__link is-active">Eventos</a>
+      <a href="../index.html" class="navbar__link is-active">Inicio</a>
+      
       <a href="comunidad.html" class="navbar__link">Comunidades</a>
       <a href="../php/foros.php" class="navbar__link">Foros</a>
       <a href="contacto.html" class="navbar__link">Contacto</a>
     </nav>
-    <a href="../login.html" class="btn btn--ghost btn--small navbar__cta">Entrar</a>
+
+    <details class="access">
+      <summary class="access__trigger" aria-label="Abrir menú de acceso">
+        <span class="access__ring">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+          </svg>
+        </span>
+      </summary>
+
+      <div class="access__panel">
+        <p class="access__title">Elige tu portal</p>
+        <div class="access__portals">
+
+          <a href="../unete.html" class="portal portal--join">
+            <span class="portal__orb">Unirme</span>
+            <span class="portal__caption">Nuevo viajero</span>
+          </a>
+
+          <a href="../login.html" class="portal portal--enter">
+            <span class="portal__orb">Entrar</span>
+            <span class="portal__caption">Ya soy viajero</span>
+          </a>
+
+        </div>
+      </div>
+    </details>
   </div>
 </header>
 
