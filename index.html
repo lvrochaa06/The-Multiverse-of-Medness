@@ -9,6 +9,17 @@
 </head>
 <body>
 
+
+<!-- FONDO GLOBAL DE MULTIVERSO -->
+
+<div class="cosmic-bg" aria-hidden="true">
+  <div class="stars"></div>
+  <div class="orb orb--purple"></div>
+  <div class="orb orb--blue"></div>
+  <div class="orb orb--cyan"></div>
+</div>
+
+
 <!-- 1. NAVBAR -->
 
 <header class="navbar" id="navbar">
@@ -24,45 +35,28 @@
       <a href="#foros" class="navbar__link">Foros</a>
       <a href="html/contacto.html" class="navbar__link">Contacto</a>
     </nav>
+        <!-- Botón hamburguesa (menú móvil) -->
+    <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
 
-    <details class="access">
-      <summary class="access__trigger" aria-label="Abrir menú de acceso">
-        <span class="access__ring">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
-          </svg>
-        </span>
-      </summary>
-
-      <div class="access__panel">
-        <p class="access__title">Elige tu portal</p>
-        <div class="access__portals">
-
-          <a href="unete.html" class="portal portal--join">
-            <span class="portal__orb">Unirme</span>
-            <span class="portal__caption">Nuevo viajero</span>
-          </a>
-
-          <a href="login.html" class="portal portal--enter">
-            <span class="portal__orb">Entrar</span>
-            <span class="portal__caption">Ya soy viajero</span>
-          </a>
-
-        </div>
-      </div>
-    </details>
+    <!-- CTA principal del navbar -->
+    <a href="unete.html" class="btn btn--primary btn--small navbar__cta">Únete</a>
   </div>
 </header>
 
 <main>
 
   <!-- 2. HERO — PANTALLA COMPLETA -->
-
   <section class="hero" id="inicio">
-    <div class="hero__bg">
-      <img src="imagenes/fondo-galaxia.avif" alt="" aria-hidden="true">
+    <div class="hero__bg"> <!-- imagen + overlay + anillos animados de fondo -->
+      <img src="https://picsum.photos/seed/multiverse-nebula/1920/1080" alt="" aria-hidden="true">
       <div class="hero__overlay"></div>
+      <div class="hero__portal" aria-hidden="true"> <!-- anillos tipo "portal" -->
+        <span class="ring ring--1"></span>
+        <span class="ring ring--2"></span>
+        <span class="ring ring--3"></span>
+      </div>
     </div>
 
     <div class="hero__content">
@@ -89,7 +83,6 @@
   </section>
 
   <!-- 3. ¿QUÉ ES THE MULTIVERSE OF MADNESS? -->
-
   <section class="about" id="about">
     <div class="section-inner about__grid">
       <div class="about__text">
@@ -112,16 +105,15 @@
         </ul>
       </div>
 
-      <div class="about__media">
+      <div class="about__media"> <!-- imagen ilustrativa de la sección "Qué es" -->
         <div class="about__media-glow" aria-hidden="true"></div>
-        <img src="imagenes/imagen_inicio.jpg" alt="Ilustración conceptual del multiverso" loading="lazy">
+        <img src="img/index.jpg" alt="Ilustración conceptual del multiverso" loading="lazy">
       </div>
     </div>
   </section>
 
-  <!-- 4. EXPLORA TU UNIVERSO — CARDS DE COMUNIDADES (SECCIÓN CLARA) -->
-
-  <section class="universes section--light" id="explora">
+  <!-- 4. EXPLORA TU UNIVERSO — CARDS DE COMUNIDADES -->
+  <section class="universes" id="explora">
     <div class="section-inner">
       <p class="eyebrow text-center">Encuentra tu portal</p>
       <h2 class="section-title text-center">Explora tu universo</h2>
@@ -129,7 +121,7 @@
         Cada universo es una puerta a una comunidad distinta. Elige el tuyo o entra a todos.
       </p>
 
-      <div class="universes__grid">
+      <div class="universes__grid"> <!-- grilla de tarjetas por categoría -->
 
         <article class="uni-card">
           <span class="uni-card__ring" aria-hidden="true"></span>
@@ -207,9 +199,8 @@
     </div>
   </section>
 
-  <!-- 5. EVENTOS DESTACADOS (SECCIÓN CLARA) -->
-
-  <section class="events section--light" id="eventos">
+  <!-- 5. EVENTOS DESTACADOS -->
+  <section class="events" id="eventos">
     <div class="section-inner">
       <div class="events__header">
         <div>
@@ -219,7 +210,7 @@
         <a href="#" class="link-arrow">Ver todos los eventos →</a>
       </div>
 
-      <div class="events__list">
+      <div class="events__list"> <!-- tarjetas de eventos destacados -->
 
                 <article class="event-card">
           <div class="event-card__image">
@@ -271,13 +262,12 @@
   </section>
 
   <!-- 6. COMUNIDADES ACTIVAS -->
-
-  <section class="communities section--light" id="comunidades">
+  <section class="communities" id="comunidades">
     <div class="section-inner">
       <p class="eyebrow text-center">Ahora mismo, en línea</p>
       <h2 class="section-title text-center">Comunidades activas</h2>
 
-      <div class="communities__grid">
+      <div class="communities__grid"> <!-- tarjetas de comunidades activas -->
 
         <article class="community-card">
           <div class="community-card__cover">
@@ -364,13 +354,16 @@
   </section>
 
   <!-- 7. ¿CÓMO FUNCIONA? -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/laura
   <section class="how-it-works" id="foros">
     <div class="section-inner">
       <p class="eyebrow text-center">Empieza en minutos</p>
       <h2 class="section-title text-center">¿Cómo funciona?</h2>
 
-      <div class="steps">
+      <div class="steps"> <!-- pasos numerados 01/02/03 -->
 
         <div class="step">
           <div class="step__icon">👤</div>
@@ -398,8 +391,7 @@
   </section>
 
   <!-- 8. ESTADÍSTICAS -->
-
-  <section class="stats">
+  <section class="stats"> <!-- contador de cifras del sitio -->
     <div class="section-inner stats__grid">
       <div class="stat">
         <span class="stat__number">120K+</span>
@@ -421,13 +413,16 @@
   </section>
 
   <!-- 9. TESTIMONIOS -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/laura
   <section class="testimonials">
     <div class="section-inner">
       <p class="eyebrow text-center">Voces del multiverso</p>
       <h2 class="section-title text-center">Lo que dice nuestra gente</h2>
 
-      <div class="testimonials__grid">
+      <div class="testimonials__grid"> <!-- citas de usuarios -->
 
         <blockquote class="testimonial-card">
           <p class="testimonial-card__text">
@@ -476,8 +471,7 @@
   </section>
 
   <!-- 10. LLAMADO FINAL -->
-
-  <section class="final-cta" id="unete">
+  <section class="final-cta" id="unete"> <!-- llamado final antes del footer -->
     <div class="final-cta__glow" aria-hidden="true"></div>
     <div class="section-inner final-cta__inner">
       <h2 class="final-cta__title">Tu universo te está esperando.</h2>
@@ -533,6 +527,7 @@
     <p>&copy; 2026 The Multiverse of Madness. Todos los derechos reservados.</p>
   </div>
 </footer>
+<script src="js/script.js"></script>
 
 </body>
 </html>

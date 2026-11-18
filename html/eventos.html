@@ -1,0 +1,100 @@
+<<<<<<< HEAD
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eventos en Colombia - The Multiverse of Madness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Orbitron:wght@600;800;900&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/eventos.css">
+<link rel="stylesheet" href="../css/nav-movil.css">
+<link rel="stylesheet" href="../css/yalu.css">
+</head>
+<body>
+<header class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="#" class="navbar__logo">
+      <span class="navbar__logo-ring" aria-hidden="true"></span>
+      <span class="navbar__logo-text">MULTIVERSE<span class="navbar__logo-accent">OF MADNESS</span></span>
+    </a>
+
+    <nav class="navbar__nav" aria-label="Navegación principal">
+      <a href="../index.html" class="navbar__link is-active">Inicio</a>
+      
+      <a href="comunidad.html" class="navbar__link">Comunidades</a>
+      <a href="../php/foros.php" class="navbar__link">Foros</a>
+      <a href="contacto.html" class="navbar__link">Contacto</a>
+    </nav>
+
+    <details class="access">
+      <summary class="access__trigger" aria-label="Abrir menú de acceso">
+        <span class="access__ring">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+          </svg>
+        </span>
+      </summary>
+
+      <div class="access__panel">
+        <p class="access__title">Elige tu portal</p>
+        <div class="access__portals">
+
+          <a href="../unete.html" class="portal portal--join">
+            <span class="portal__orb">Unirme</span>
+            <span class="portal__caption">Nuevo viajero</span>
+          </a>
+
+          <a href="../login.html" class="portal portal--enter">
+            <span class="portal__orb">Entrar</span>
+            <span class="portal__caption">Ya soy viajero</span>
+          </a>
+
+        </div>
+      </div>
+    </details>
+  </div>
+</header>
+
+<main class="ev">
+  <section class="ev-hero">
+    <div class="ev-hero__inner">
+      <p class="eyebrow">Agenda en Colombia</p>
+      <h1>Eventos para vivir<br>tus universos</h1>
+      <p class="ev-hero__lead">Convenciones, festivales, ferias y torneos en Bogotá, Medellín, Cali, Cartagena y Barranquilla. Las fechas confirmadas llevan una marca verde; las demás son estimadas y conviene revisarlas en el sitio oficial.</p>
+    </div>
+  </section>
+
+  <section class="ev-body">
+    <div class="ev-tools">
+      <div class="ev-chips" id="evCats" role="group" aria-label="Categoría"></div>
+      <div class="ev-controls">
+        <label class="ev-field"><span>Ciudad</span>
+          <select id="evCiudad"><option value="">Todas</option></select>
+        </label>
+        <label class="ev-field ev-field--grow"><span>Buscar</span>
+          <input type="search" id="evBuscar" placeholder="Nombre o lugar…">
+        </label>
+        <label class="ev-switch"><input type="checkbox" id="evOk"><span>Solo fechas confirmadas</span></label>
+      </div>
+    </div>
+
+    <p class="ev-count" id="evCount" aria-live="polite"></p>
+    <div id="evLista"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__bottom"><p>&copy; 2026 The Multiverse of Madness. Las fechas pueden cambiar: confirma siempre en la página oficial de cada evento.</p></div>
+</footer>
+
+<script src="../js/eventos.js"></script>
+<script src="../js/nav.js" defer></script>
+<script src="../js/yalu.js" data-news="false" defer></script>
+</body>
+</html>
+>>>>>>> origin/laura

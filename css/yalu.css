@@ -1,0 +1,196 @@
+/* =========================================================
+   YALU — asistente del Multiverso
+   Anuncios + botón flotante + chat estilo mensajería
+   Autocontenido: no depende de style.css
+   ========================================================= */
+.yalu{
+  --y-void:#070E19; --y-deep:#0B1521; --y-panel:#111E31; --y-raise:#172A42;
+  --y-cyan:#3DE6E1; --y-violet:#B65BDE; --y-blue:#5E8BF5;
+  --y-text:#F4F8FB; --y-muted:#9FB0C3;
+  --y-in:#15263B; --y-out:#1B5A78;
+  --y-grad:linear-gradient(135deg,var(--y-violet),var(--y-blue) 55%,var(--y-cyan));
+  position:fixed; right:clamp(12px,2vw,24px); bottom:clamp(12px,2vw,24px);
+  z-index:300; display:flex; flex-direction:column; align-items:flex-end; gap:12px;
+  font-family:'DM Sans','Segoe UI',system-ui,sans-serif; color:var(--y-text);
+  pointer-events:none;
+}
+.yalu *{ box-sizing:border-box; }
+.yalu > *{ pointer-events:auto; }
+.yalu button{ font-family:inherit; cursor:pointer; }
+.yalu :focus-visible{ outline:2px solid var(--y-cyan); outline-offset:2px; }
+
+/* ---------- Anuncios: "lo que viene" ---------- */
+.yalu-news{ display:flex; flex-direction:column; gap:10px; width:min(330px,calc(100vw - 24px)); }
+.yalu-news__item{
+  position:relative; display:flex; gap:12px; padding:13px 38px 13px 13px;
+  background:rgba(17,30,49,.94); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.10); border-radius:16px;
+  box-shadow:0 14px 40px rgba(0,0,0,.45);
+  animation:yaluNewsIn .55s cubic-bezier(.22,1,.36,1) both;
+}
+.yalu-news__item::before{ /* filo de color a la izquierda */
+  content:''; position:absolute; left:0; top:12px; bottom:12px; width:3px; border-radius:3px; background:var(--y-grad);
+}
+.yalu-news__icon{
+  flex:none; width:38px; height:38px; border-radius:12px; display:grid; place-items:center; font-size:1.2rem;
+  background:linear-gradient(145deg,rgba(182,91,222,.28),rgba(61,230,225,.18));
+}
+.yalu-news__tag{ display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.04em; color:var(--y-cyan); margin-bottom:2px; }
+.yalu-news__title{ font-family:'Sora','Segoe UI',sans-serif; font-weight:600; font-size:.88rem; line-height:1.25; }
+.yalu-news__text{ margin:2px 0 0; font-size:.8rem; line-height:1.4; color:var(--y-muted); }
+.yalu-news__close{
+  position:absolute; top:8px; right:8px; width:26px; height:26px; border-radius:50%; border:0;
+  background:transparent; color:var(--y-muted); font-size:1.1rem; line-height:1; display:grid; place-items:center;
+  transition:background .2s,color .2s;
+}
+.yalu-news__close:hover{ background:rgba(255,255,255,.1); color:#fff; }
+.yalu-news__item.is-leaving{ animation:yaluNewsOut .3s ease forwards; }
+@keyframes yaluNewsIn{ from{opacity:0; transform:translateY(14px) scale(.97);} to{opacity:1; transform:none;} }
+@keyframes yaluNewsOut{ to{opacity:0; transform:translateX(24px);} }
+
+/* ---------- Botón flotante: logo + nombre ---------- */
+.yalu-fab{
+  display:flex; align-items:center; gap:10px; padding:6px 18px 6px 6px; border-radius:999px; border:1px solid rgba(255,255,255,.14);
+  background:rgba(17,30,49,.96); color:var(--y-text);
+  box-shadow:0 12px 34px rgba(0,0,0,.5), 0 0 0 0 rgba(61,230,225,.4);
+  transition:transform .25s, box-shadow .25s;
+  animation:yaluPulse 3.2s ease-in-out 2s 3;
+}
+.yalu-fab:hover{ transform:translateY(-3px); box-shadow:0 16px 40px rgba(0,0,0,.55), 0 0 26px rgba(61,230,225,.35); }
+.yalu-fab img{ width:46px; height:46px; border-radius:50%; display:block; box-shadow:0 0 18px rgba(182,91,222,.6); }
+.yalu-fab__txt{ display:flex; flex-direction:column; align-items:flex-start; line-height:1.15; }
+.yalu-fab__name{ font-family:'Sora','Segoe UI',sans-serif; font-weight:700; font-size:.98rem; }
+.yalu-fab__sub{ font-size:.7rem; color:var(--y-muted); display:flex; align-items:center; gap:5px; }
+.yalu-dot{ width:7px; height:7px; border-radius:50%; background:#37E08A; box-shadow:0 0 8px #37E08A; display:inline-block; }
+@keyframes yaluPulse{ 0%,100%{ box-shadow:0 12px 34px rgba(0,0,0,.5),0 0 0 0 rgba(61,230,225,.45);} 50%{ box-shadow:0 12px 34px rgba(0,0,0,.5),0 0 0 12px rgba(61,230,225,0);} }
+
+/* ---------- Ventana del chat ---------- */
+.yalu-win{
+  width:min(390px,calc(100vw - 24px)); height:min(620px,calc(100dvh - 110px));
+  display:none; flex-direction:column; overflow:hidden; border-radius:20px;
+  background:var(--y-deep); border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 30px 90px rgba(0,0,0,.65), 0 0 0 1px rgba(61,230,225,.06);
+  transform-origin:100% 100%;
+}
+.yalu.is-open .yalu-win{ display:flex; animation:yaluWinIn .4s cubic-bezier(.22,1,.36,1) both; }
+.yalu.is-open .yalu-news,
+.yalu.is-open .yalu-fab{ display:none; }
+@keyframes yaluWinIn{ from{opacity:0; transform:translateY(18px) scale(.94);} to{opacity:1; transform:none;} }
+
+.yalu-head{
+  display:flex; align-items:center; gap:11px; padding:11px 12px 11px 14px;
+  background:linear-gradient(180deg,#14283f,#0f2036); border-bottom:1px solid rgba(255,255,255,.08);
+}
+.yalu-head__av{ position:relative; flex:none; }
+.yalu-head__av img{ width:42px; height:42px; border-radius:50%; display:block; box-shadow:0 0 16px rgba(182,91,222,.55); }
+.yalu-head__av .yalu-dot{ position:absolute; right:0; bottom:1px; border:2px solid #14283f; width:12px; height:12px; box-sizing:border-box; }
+.yalu-head__info{ min-width:0; flex:1; line-height:1.2; }
+.yalu-head__row{ display:flex; align-items:center; gap:8px; }
+.yalu-head__name{ font-family:'Sora','Segoe UI',sans-serif; font-weight:700; font-size:1.02rem; }
+.yalu-badge{
+  display:inline-flex; align-items:center; gap:4px; padding:2px 8px 2px 6px; border-radius:999px;
+  font-size:.66rem; font-weight:700; letter-spacing:.05em; color:#0B1521; background:var(--y-cyan);
+}
+.yalu-badge svg{ width:12px; height:12px; }
+.yalu-head__status{ font-size:.74rem; color:var(--y-muted); margin-top:1px; }
+.yalu-iconbtn{
+  width:34px; height:34px; border-radius:50%; border:0; background:transparent; color:var(--y-text);
+  display:grid; place-items:center; transition:background .2s;
+}
+.yalu-iconbtn:hover{ background:rgba(255,255,255,.1); }
+.yalu-iconbtn svg{ width:18px; height:18px; }
+
+/* Fondo del chat: el logo de Yalu como "papel tapiz" */
+.yalu-body{
+  position:relative; flex:1 1 0; min-height:0; overflow-y:auto; padding:14px 12px 8px; display:flex; flex-direction:column; gap:6px;
+  background:var(--y-deep); scrollbar-width:thin; scrollbar-color:rgba(255,255,255,.18) transparent;
+}
+.yalu-body::before{
+  content:''; position:sticky; top:0; display:block; flex:none; height:0;
+}
+.yalu-wall{
+  position:absolute; inset:0; pointer-events:none; z-index:0; opacity:.30;
+  background:url('../imagenes/yalu-fondo.jpg') center 46%/118% auto no-repeat;
+  -webkit-mask-image:radial-gradient(circle at 50% 48%,#000 18%,transparent 72%);
+          mask-image:radial-gradient(circle at 50% 48%,#000 18%,transparent 72%);
+}
+.yalu-scroll{ position:relative; z-index:1; display:flex; flex-direction:column; gap:6px; min-height:100%; justify-content:flex-end; }
+.yalu-day{ align-self:center; margin:4px 0 8px; padding:4px 12px; border-radius:8px; font-size:.7rem; color:var(--y-muted); background:rgba(17,30,49,.85); }
+
+.yalu-msg{ display:flex; flex-direction:column; max-width:84%; animation:yaluMsg .28s ease both; }
+.yalu-msg--bot{ align-self:flex-start; }
+.yalu-msg--user{ align-self:flex-end; align-items:flex-end; }
+@keyframes yaluMsg{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+.yalu-bub{
+  position:relative; padding:8px 11px 6px; font-size:.9rem; line-height:1.42; border-radius:12px; word-wrap:break-word; overflow-wrap:anywhere;
+  box-shadow:0 1px 1px rgba(0,0,0,.25);
+}
+.yalu-msg--bot .yalu-bub{ background:var(--y-in); border-top-left-radius:3px; }
+.yalu-msg--user .yalu-bub{ background:var(--y-out); border-top-right-radius:3px; }
+.yalu-msg--bot .yalu-bub.has-tail::before,
+.yalu-msg--user .yalu-bub.has-tail::before{ content:''; position:absolute; top:0; width:10px; height:12px; }
+.yalu-msg--bot .yalu-bub.has-tail::before{ left:-7px; background:var(--y-in); clip-path:polygon(100% 0,0 0,100% 100%); }
+.yalu-msg--user .yalu-bub.has-tail::before{ right:-7px; background:var(--y-out); clip-path:polygon(0 0,100% 0,0 100%); }
+.yalu-bub p{ margin:0 0 6px; }
+.yalu-bub p:last-of-type{ margin-bottom:0; }
+.yalu-bub a{ color:var(--y-cyan); text-decoration:underline; text-underline-offset:2px; }
+.yalu-bub strong{ font-weight:700; }
+.yalu-meta{ display:flex; justify-content:flex-end; align-items:center; gap:4px; margin-top:2px; font-size:.64rem; color:rgba(244,248,251,.55); }
+.yalu-tick{ width:15px; height:9px; color:var(--y-cyan); }
+
+/* Tarjeta de comunidad dentro del chat */
+.yalu-card{
+  display:flex; align-items:center; gap:10px; margin-top:8px; padding:9px 10px; border-radius:12px; text-decoration:none !important;
+  color:var(--y-text) !important; background:rgba(7,14,25,.55); border:1px solid rgba(255,255,255,.1);
+  transition:border-color .2s, transform .2s, background .2s;
+}
+.yalu-card:hover{ border-color:var(--y-cyan); transform:translateY(-1px); background:rgba(7,14,25,.8); }
+.yalu-card__ico{ flex:none; width:38px; height:38px; border-radius:11px; display:grid; place-items:center; font-size:1.25rem; background:linear-gradient(145deg,rgba(182,91,222,.3),rgba(61,230,225,.2)); }
+.yalu-card__t{ font-weight:700; font-size:.86rem; line-height:1.2; }
+.yalu-card__d{ font-size:.75rem; color:var(--y-muted); line-height:1.3; }
+.yalu-card__go{ margin-left:auto; color:var(--y-cyan); font-size:1rem; }
+.yalu-btnlink{
+  display:inline-block; margin-top:8px; padding:7px 14px; border-radius:999px; font-size:.8rem; font-weight:700;
+  color:#0B1521 !important; background:var(--y-grad); text-decoration:none !important;
+}
+
+/* Escribiendo… */
+.yalu-typing{ display:flex; gap:4px; padding:11px 13px; }
+.yalu-typing i{ width:7px; height:7px; border-radius:50%; background:var(--y-muted); animation:yaluDot 1.2s infinite ease-in-out; }
+.yalu-typing i:nth-child(2){ animation-delay:.15s; } .yalu-typing i:nth-child(3){ animation-delay:.3s; }
+@keyframes yaluDot{ 0%,60%,100%{ transform:translateY(0); opacity:.5;} 30%{ transform:translateY(-5px); opacity:1;} }
+
+/* Respuestas rápidas */
+.yalu-chips{
+  position:relative; z-index:1; display:flex; gap:7px; padding:8px 12px 4px; overflow-x:auto; flex:none;
+  background:linear-gradient(180deg,transparent,rgba(11,21,33,.95) 40%); scrollbar-width:none;
+}
+.yalu-chips::-webkit-scrollbar{ display:none; }
+.yalu-chip{
+  flex:none; padding:7px 13px; border-radius:999px; font-size:.8rem; font-weight:500; color:var(--y-text); white-space:nowrap;
+  background:rgba(23,42,66,.9); border:1px solid rgba(61,230,225,.35); transition:background .2s,border-color .2s,transform .2s;
+}
+.yalu-chip:hover{ background:rgba(61,230,225,.14); border-color:var(--y-cyan); transform:translateY(-1px); }
+
+/* Barra de escritura */
+.yalu-form{ display:flex; align-items:center; gap:8px; padding:8px 10px 10px; background:#0F1D30; border-top:1px solid rgba(255,255,255,.07); flex:none; }
+.yalu-input{
+  flex:1; min-width:0; padding:11px 15px; border-radius:999px; border:1px solid rgba(255,255,255,.1);
+  background:var(--y-raise); color:var(--y-text); font:inherit; font-size:.92rem;
+}
+.yalu-input::placeholder{ color:#7F92A8; }
+.yalu-input:focus{ outline:none; border-color:var(--y-cyan); }
+.yalu-send{
+  flex:none; width:42px; height:42px; border-radius:50%; border:0; display:grid; place-items:center; color:#0B1521;
+  background:var(--y-grad); transition:transform .2s, filter .2s;
+}
+.yalu-send:hover{ transform:scale(1.07); filter:brightness(1.1); }
+.yalu-send svg{ width:19px; height:19px; margin-left:2px; }
+
+@media (max-width:520px){
+  .yalu{ right:8px; bottom:8px; }
+  .yalu-win{ width:calc(100vw - 16px); height:calc(100dvh - 90px); }
+}
+@media (prefers-reduced-motion:reduce){
+  .yalu *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+}

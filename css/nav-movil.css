@@ -1,0 +1,22 @@
+/* Navegación compartida: enlace activo + menú hamburguesa en móvil */
+.navbar__link.is-active{ color:var(--text-main,#F4F8FB); }
+.navbar__link.is-active::after{ width:100%; }
+.navbar__burger{
+  display:none; width:44px; height:44px; border-radius:12px; border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.04); color:#F4F8FB; align-items:center; justify-content:center; cursor:pointer; margin-left:auto;
+}
+.navbar__burger svg{ width:22px; height:22px; }
+.navbar__cta{ white-space:nowrap; }
+@media (max-width:880px){
+  .navbar__burger{ display:inline-flex; }
+  .navbar__inner{ position:relative; gap:.75rem; }
+  .navbar__nav{
+    display:none !important; position:absolute; top:calc(100% + 12px); left:clamp(1rem,4vw,2rem); right:clamp(1rem,4vw,2rem);
+    flex-direction:column; align-items:stretch; gap:0; padding:10px; border-radius:18px;
+    background:rgba(11,21,33,.97); border:1px solid rgba(255,255,255,.12); box-shadow:0 24px 70px rgba(0,0,0,.6);
+  }
+  .navbar.is-open .navbar__nav{ display:flex !important; }
+  .navbar__nav .navbar__link{ padding:14px 16px; border-radius:12px; font-size:1rem; }
+  .navbar__nav .navbar__link::after{ display:none; }
+  .navbar__nav .navbar__link:hover, .navbar__nav .navbar__link.is-active{ background:rgba(255,255,255,.06); }
+}

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Multiverse of Madness — Encuentra tu universo</title>
+<meta name="description" content="Una plataforma para descubrir comunidades y vivir experiencias: videojuegos, anime, cine, música, cosplay, tecnología y más.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 1. NAVBAR -->
+
+<header class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="#" class="navbar__logo">
+      <span class="navbar__logo-ring" aria-hidden="true"></span>
+      <span class="navbar__logo-text">MULTIVERSE<span class="navbar__logo-accent">OF MADNESS</span></span>
+    </a>
+
+    <nav class="navbar__nav" aria-label="Navegación principal">
+      <a href="html/eventos.html" class="navbar__link">Eventos</a>
+      <a href="#comunidades" class="navbar__link">Comunidades</a>
+      <a href="#foros" class="navbar__link">Foros</a>
+      <a href="html/contacto.html" class="navbar__link">Contacto</a>
+    </nav>
+
+    <details class="access">
+      <summary class="access__trigger" aria-label="Abrir menú de acceso">
+        <span class="access__ring">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+          </svg>
+        </span>
+      </summary>
+
+      <div class="access__panel">
+        <p class="access__title">Elige tu portal</p>
+        <div class="access__portals">
+
+          <a href="unete.html" class="portal portal--join">
+            <span class="portal__orb">Unirme</span>
+            <span class="portal__caption">Nuevo viajero</span>
+          </a>
+
+          <a href="login.html" class="portal portal--enter">
+            <span class="portal__orb">Entrar</span>
+            <span class="portal__caption">Ya soy viajero</span>
+          </a>
+
+        </div>
+      </div>
+    </details>
+  </div>
+</header>
+
+<main>
+
+  <!-- 2. HERO — PANTALLA COMPLETA -->
+
+  <section class="hero" id="inicio">
+    <div class="hero__bg">
+      <img src="imagenes/fondo-galaxia.avif" alt="" aria-hidden="true">
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="eyebrow hero__eyebrow">Un universo para cada obsesión</p>
+      <h1 class="hero__title">
+        <span class="hero__title-main">THE MULTIVERSE</span>
+        <span class="hero__title-sub">OF MADNESS</span>
+      </h1>
+      <p class="hero__text">
+        Videojuegos, anime, cine, series, libros, música, cosplay y tecnología conviven aquí.
+        Encuentra a tu gente, entra a torneos y eventos, y vive experiencias que solo existen
+        cuando varios universos chocan.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#explora" class="btn btn--ghost">Explorar</a>
+      </div>
+    </div>
+
+    <a href="#about" class="hero__scroll" aria-label="Bajar a la siguiente sección">
+      <span class="hero__scroll-line"></span>
+      <span class="hero__scroll-label">Desliza</span>
+    </a>
+  </section>
+
+  <!-- 3. ¿QUÉ ES THE MULTIVERSE OF MADNESS? -->
+
+  <section class="about" id="about">
+    <div class="section-inner about__grid">
+      <div class="about__text">
+        <p class="eyebrow">Qué encontrarás aquí</p>
+        <h2 class="section-title">¿Qué es <span class="text-gradient">The Multiverse of Madness</span>?</h2>
+        <p class="about__desc">
+          No es una tienda. No es otra red social genérica. Es un punto de encuentro para
+          personas jóvenes que viven sus pasiones a full: gamers, otakus, cinéfilos, lectores,
+          cosplayers, músicos, atletas y makers.
+        </p>
+        <p class="about__desc">
+          Aquí descubres comunidades activas, te enteras de torneos y eventos temáticos,
+          y participas en experiencias reales dentro de los universos que ya amas.
+        </p>
+
+        <ul class="about__list">
+          <li><span class="about__list-dot"></span> Comunidades curadas, no algoritmos vacíos.</li>
+          <li><span class="about__list-dot"></span> Eventos y torneos en tu ciudad y en línea.</li>
+          <li><span class="about__list-dot"></span> Un lugar diseñado para explorar, no para hacer scroll infinito.</li>
+        </ul>
+      </div>
+
+      <div class="about__media">
+        <div class="about__media-glow" aria-hidden="true"></div>
+        <img src="imagenes/imagen_inicio.jpg" alt="Ilustración conceptual del multiverso" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. EXPLORA TU UNIVERSO — CARDS DE COMUNIDADES (SECCIÓN CLARA) -->
+
+  <section class="universes section--light" id="explora">
+    <div class="section-inner">
+      <p class="eyebrow text-center">Encuentra tu portal</p>
+      <h2 class="section-title text-center">Explora tu universo</h2>
+      <p class="section-subtitle text-center">
+        Cada universo es una puerta a una comunidad distinta. Elige el tuyo o entra a todos.
+      </p>
+
+      <div class="universes__grid">
+
+        <article class="uni-card">
+          <span class="uni-card__ring" aria-hidden="true"></span>
+          <div class="uni-card__icon">🎮</div>
+          <h3 class="uni-card__title">
+            <a href="html/video_juegos.html" class="uni-card__link">Videojuegos<span class="stretched-link" aria-hidden="true"></span></a>
+          </h3>
+          <p class="uni-card__desc">Squads, torneos competitivos y gente para tu próxima partida.</p>
+        </article>
+
+        <article class="uni-card">
+          <span class="uni-card__ring" aria-hidden="true"></span>
+          <div class="uni-card__icon">🌸</div>
+          <h3 class="uni-card__title">
+            <a href="html/anime.html" class="uni-card__link">Anime<span class="stretched-link" aria-hidden="true"></span></a>
+          </h3>
+          <p class="uni-card__desc">Foros de teorías, watch-parties y comunidades por temporada.</p>
+        </article>
+
+        <article class="uni-card">
+          <span class="uni-card__ring" aria-hidden="true"></span>
+          <div class="uni-card__icon">🎬</div>
+          <h3 class="uni-card__title">
+            <a href="html/peliculas.html" class="uni-card__link">Películas<span class="stretched-link" aria-hidden="true"></span></a>
+          </h3>
+          <p class="uni-card__desc">Clubes de cine, estrenos comentados y rankings sin spoilers.</p>
+        </article>
+
+        <article class="uni-card">
+          <span class="uni-card__ring" aria-hidden="true"></span>
+          <div class="uni-card__icon">📚</div>
+          <h3 class="uni-card__title">
+            <a href="html/libros.html" class="uni-card__link">Libros<span class="stretched-link" aria-hidden="true"></span></a>
+          </h3>
+          <p class="uni-card__desc">Clubes de lectura, sagas favoritas y recomendaciones reales.</p>
+        </article>
+
+        <article class="uni-card">
+          <span class="uni-card__ring" aria-hidden="true"></span>
+          <div class="uni-card__icon">🎧</div>
+          <h3 class="uni-card__title">
+            <a href="html/musica.html" class="uni-card__link">Música<span class="stretched-link" aria-hidden="true"></span></a>
+          </h3>
+          <p class="uni-card__desc">Playlists colaborativas, conciertos y fandoms de tu género.</p>
+        </article>
+
+        <article class="uni-card">
+          <span class="uni-card__ring" aria-hidden="true"></span>
+          <div class="uni-card__icon">🏆</div>
+          <h3 class="uni-card__title">
+            <a href="html/deportes.html" class="uni-card__link">Deportes<span class="stretched-link" aria-hidden="true"></span></a>
+          </h3>
+          <p class="uni-card__desc">Equipos, ligas amateur y planes para ver o jugar en vivo.</p>
+        </article>
+
+        <article class="uni-card">
+          <span class="uni-card__ring" aria-hidden="true"></span>
+          <div class="uni-card__icon">🎭</div>
+          <h3 class="uni-card__title">
+            <a href="html/cosplay.html" class="uni-card__link">Cosplay<span class="stretched-link" aria-hidden="true"></span></a>
+          </h3>
+          <p class="uni-card__desc">Talleres de props, meetups fotográficos y referentes reales.</p>
+        </article>
+
+        <article class="uni-card">
+          <span class="uni-card__ring" aria-hidden="true"></span>
+          <div class="uni-card__icon">💻</div>
+          <h3 class="uni-card__title">
+            <a href="html/tecnologia.html" class="uni-card__link">Tecnología<span class="stretched-link" aria-hidden="true"></span></a>
+          </h3>
+          <p class="uni-card__desc">Builds, hackathons y comunidades de makers y creadores.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. EVENTOS DESTACADOS (SECCIÓN CLARA) -->
+
+  <section class="events section--light" id="eventos">
+    <div class="section-inner">
+      <div class="events__header">
+        <div>
+          <p class="eyebrow">No te lo pierdas</p>
+          <h2 class="section-title">Eventos destacados</h2>
+        </div>
+        <a href="#" class="link-arrow">Ver todos los eventos →</a>
+      </div>
+
+      <div class="events__list">
+
+                <article class="event-card">
+          <div class="event-card__image">
+            <img src="imagenes/comic_con.jpg" alt="Comic Con Medellín: cómics, anime y cosplay" loading="lazy">
+            <span class="event-card__date">
+              <strong>27</strong>
+              <span>NOV</span>
+            </span>
+          </div>
+          <div class="event-card__body">
+            <h3 class="event-card__title"><a href="https://plazamayor.com.co/event/comic-con-2026/" class="event-card__link" target="_blank" rel="noopener">Comic Con Medellín<span class="stretched-link" aria-hidden="true"></span></a></h3>
+            <p class="event-card__place">📍 Plaza Mayor, Medellín</p>
+            <a href="https://plazamayor.com.co/event/comic-con-2026/" class="btn btn--outline btn--small event-card__cta" target="_blank" rel="noopener">Ver evento</a>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-card__image">
+            <img src="imagenes/Gamer_med_.jpg" alt="Gamers MED: torneo de videojuegos en Medellín" loading="lazy">
+            <span class="event-card__date">
+              <strong>Nov–Dic</strong>
+              <span>2026</span>
+            </span>
+          </div>
+          <div class="event-card__body">
+            <h3 class="event-card__title"><a href="https://www.gamersmed.com" class="event-card__link" target="_blank" rel="noopener">Gamers MED — Gran final<span class="stretched-link" aria-hidden="true"></span></a></h3>
+            <p class="event-card__place">📍 Medellín, Antioquia</p>
+            <a href="https://www.gamersmed.com" class="btn btn--outline btn--small event-card__cta" target="_blank" rel="noopener">Ver evento</a>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-card__image">
+            <img src="imagenes/estereo_picnic.jpg" alt="Festival Estéreo Picnic: música en vivo en Bogotá" loading="lazy">
+            <span class="event-card__date">
+              <strong>19</strong>
+              <span>MAR</span>
+            </span>
+          </div>
+          <div class="event-card__body">
+            <h3 class="event-card__title"><a href="https://www.festivalestereopicnic.com/" class="event-card__link" target="_blank" rel="noopener">Festival Estéreo Picnic 2027<span class="stretched-link" aria-hidden="true"></span></a></h3>
+            <p class="event-card__place">📍 Parque Simón Bolívar, Bogotá</p>
+            <a href="https://www.festivalestereopicnic.com/" class="btn btn--outline btn--small event-card__cta" target="_blank" rel="noopener">Ver evento</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. COMUNIDADES ACTIVAS -->
+
+  <section class="communities section--light" id="comunidades">
+    <div class="section-inner">
+      <p class="eyebrow text-center">Ahora mismo, en línea</p>
+      <h2 class="section-title text-center">Comunidades activas</h2>
+
+      <div class="communities__grid">
+
+        <article class="community-card">
+          <div class="community-card__cover">
+            <img src="imagenes/gameconsole.jpg" alt="" loading="lazy">
+          </div>
+          <div class="community-card__body">
+            <h3 class="community-card__title"><a href="html/video_juegos.html" class="community-card__link">gamers<span class="stretched-link" aria-hidden="true"></span></a></h3>
+            <p class="community-card__meta">gamers</p>
+          </div>
+        </article>
+
+        <article class="community-card">
+          <div class="community-card__cover">
+            <img src="imagenes/anime.jpg" alt="" loading="lazy">
+          </div>
+          <div class="community-card__body">
+            <h3 class="community-card__title"><a href="html/anime.html" class="community-card__link">templo sagrado<span class="stretched-link" aria-hidden="true"></span></a></h3>
+            <p class="community-card__meta">aldea de la hoja</p>
+          </div>
+        </article>
+
+        <article class="community-card">
+          <div class="community-card__cover">
+            <img src="imagenes/cosplayers.jpg" alt="" loading="lazy">
+          </div>
+          <div class="community-card__body">
+            <h3 class="community-card__title"><a href="html/cosplay.html" class="community-card__link">cosplayers<span class="stretched-link" aria-hidden="true"></span></a></h3>
+            <p class="community-card__meta">Cosplayers</p>
+          </div>
+        </article>
+
+        <article class="community-card">
+          <div class="community-card__cover">
+            <img src="imagenes/tecnologia.jpg" alt="" loading="lazy">
+          </div>
+          <div class="community-card__body">
+            <h3 class="community-card__title"><a href="html/tecnologia.html" class="community-card__link">mundo informatico<span class="stretched-link" aria-hidden="true"></span></a></h3>
+            <p class="community-card__meta">mundo informatico</p>
+          </div>
+        </article>
+
+                <article class="community-card">
+          <div class="community-card__cover">
+            <img src="imagenes/libros.jpg" alt="" loading="lazy">
+          </div>
+          <div class="community-card__body">
+            <h3 class="community-card__title"><a href="html/video_juegos.html" class="community-card__link">biblioteca<span class="stretched-link" aria-hidden="true"></span></a></h3>
+            <p class="community-card__meta">biblioteca</p>
+          </div>
+        </article>
+
+        <article class="community-card">
+          <div class="community-card__cover">
+            <img src="imagenes/cine.jpg" alt="" loading="lazy">
+          </div>
+          <div class="community-card__body">
+            <h3 class="community-card__title"><a href="html/anime.html" class="community-card__link">cine mundial<span class="stretched-link" aria-hidden="true"></span></a></h3>
+            <p class="community-card__meta">cine mundial</p>
+          </div>
+        </article>
+
+        <article class="community-card">
+          <div class="community-card__cover">
+            <img src="imagenes/musica.jpg" alt="" loading="lazy">
+          </div>
+          <div class="community-card__body">
+            <h3 class="community-card__title"><a href="html/cosplay.html" class="community-card__link">frecuencia<span class="stretched-link" aria-hidden="true"></span></a></h3>
+            <p class="community-card__meta">música</p>
+          </div>
+        </article>
+
+        <article class="community-card">
+          <div class="community-card__cover">
+            <img src="imagenes/deportes.jpg" alt="" loading="lazy">
+          </div>
+          <div class="community-card__body">
+            <h3 class="community-card__title"><a href="html/tecnologia.html" class="community-card__link">zona atletica<span class="stretched-link" aria-hidden="true"></span></a></h3>
+            <p class="community-card__meta">zona atletica</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. ¿CÓMO FUNCIONA? -->
+
+  <section class="how-it-works" id="foros">
+    <div class="section-inner">
+      <p class="eyebrow text-center">Empieza en minutos</p>
+      <h2 class="section-title text-center">¿Cómo funciona?</h2>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step__icon">👤</div>
+          <span class="step__index">Paso 01</span>
+          <h3 class="step__title">Crear cuenta</h3>
+          <p class="step__desc">Regístrate y cuéntanos qué universos te apasionan.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__icon">🧭</div>
+          <span class="step__index">Paso 02</span>
+          <h3 class="step__title">Encontrar comunidad</h3>
+          <p class="step__desc">Te conectamos con comunidades activas afines a tus gustos.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__icon">🚀</div>
+          <span class="step__index">Paso 03</span>
+          <h3 class="step__title">Participar</h3>
+          <p class="step__desc">Entra a foros, eventos y torneos, y vive la experiencia.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. ESTADÍSTICAS -->
+
+  <section class="stats">
+    <div class="section-inner stats__grid">
+      <div class="stat">
+        <span class="stat__number">120K+</span>
+        <span class="stat__label">Usuarios</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">340+</span>
+        <span class="stat__label">Eventos realizados</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">85+</span>
+        <span class="stat__label">Comunidades</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">2.1M+</span>
+        <span class="stat__label">Mensajes enviados</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. TESTIMONIOS -->
+
+  <section class="testimonials">
+    <div class="section-inner">
+      <p class="eyebrow text-center">Voces del multiverso</p>
+      <h2 class="section-title text-center">Lo que dice nuestra gente</h2>
+
+      <div class="testimonials__grid">
+
+        <blockquote class="testimonial-card">
+          <p class="testimonial-card__text">
+            "Encontré a mi equipo de eSports acá en menos de una semana. Ahora entrenamos
+            juntos casi todos los días."
+          </p>
+          <footer class="testimonial-card__author">
+            <img src="img/avatars/avatar-13.jpg" alt="">
+            <div>
+              <span class="testimonial-card__name">Camila R.</span>
+              <span class="testimonial-card__role">Videojuegos</span>
+            </div>
+          </footer>
+        </blockquote>
+
+        <blockquote class="testimonial-card">
+          <p class="testimonial-card__text">
+            "Por fin un lugar donde hablar de anime sin que se pierda entre memes.
+            Los foros son súper activos."
+          </p>
+          <footer class="testimonial-card__author">
+            <img src="img/avatars/avatar-14.jpg" alt="">
+            <div>
+              <span class="testimonial-card__name">Julián M.</span>
+              <span class="testimonial-card__role">Anime</span>
+            </div>
+          </footer>
+        </blockquote>
+
+        <blockquote class="testimonial-card">
+          <p class="testimonial-card__text">
+            "Fui a mi primer meetup de cosplay gracias a un evento que vi acá.
+            Conocí gente increíble."
+          </p>
+          <footer class="testimonial-card__author">
+            <img src="img/avatars/avatar-15.jpg" alt="">
+            <div>
+              <span class="testimonial-card__name">Valentina S.</span>
+              <span class="testimonial-card__role">Cosplay</span>
+            </div>
+          </footer>
+        </blockquote>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. LLAMADO FINAL -->
+
+  <section class="final-cta" id="unete">
+    <div class="final-cta__glow" aria-hidden="true"></div>
+    <div class="section-inner final-cta__inner">
+      <h2 class="final-cta__title">Tu universo te está esperando.</h2>
+      <p class="final-cta__text">Únete gratis y empieza a descubrir tu gente hoy mismo.</p>
+      <a href="unete.html" class="btn btn--primary btn--large">Únete a The Multiverse of Madness</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- 11. FOOTER -->
+
+<footer class="footer" id="contacto">
+  <div class="section-inner footer__grid">
+
+    <div class="footer__brand">
+      <a href="#" class="navbar__logo">
+        <span class="navbar__logo-ring" aria-hidden="true"></span>
+        <span class="navbar__logo-text">MULTIVERSE<span class="navbar__logo-accent">OF MADNESS</span></span>
+      </a>
+      <p class="footer__tagline">Un portal a cada comunidad que te apasiona.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Plataforma</h4>
+      <a href="#explora" class="footer__link">Universos</a>
+      <a href="#eventos" class="footer__link">Eventos</a>
+      <a href="#comunidades" class="footer__link">Comunidades</a>
+      <a href="#foros" class="footer__link">Foros</a>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Compañía</h4>
+      <a href="#" class="footer__link">Sobre nosotros</a>
+      <a href="#" class="footer__link">Términos y condiciones</a>
+      <a href="#" class="footer__link">Privacidad</a>
+      <a href="#contacto" class="footer__link">Contacto</a>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Síguenos</h4>
+      <div class="footer__socials">
+        <a href="#" class="footer__social" aria-label="Instagram">IG</a>
+        <a href="#" class="footer__social" aria-label="Facebook">FB</a>
+        <a href="#" class="footer__social" aria-label="TikTok">TT</a>
+        <a href="#" class="footer__social" aria-label="X">X</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer__bottom">
+    <p>&copy; 2026 The Multiverse of Madness. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+</body>
+</html>
