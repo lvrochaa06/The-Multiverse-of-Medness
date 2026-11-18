@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Multiverse of Madness</title>
-    <link rel="stylesheet" href="../css/contacto.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto - The Multiverse of Madness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Orbitron:wght@600;800;900&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/contacto.css">
+<link rel="stylesheet" href="../css/nav-movil.css">
+<link rel="stylesheet" href="../css/yalu.css">
 </head>
-<body>
-    <header class="navbar" id="navbar">
+<body class="ct-body">
+
+<header class="navbar" id="navbar">
   <div class="navbar__inner">
     <a href="#" class="navbar__logo">
       <span class="navbar__logo-ring" aria-hidden="true"></span>
@@ -15,61 +22,167 @@
     </a>
 
     <nav class="navbar__nav" aria-label="Navegación principal">
-      <a href="../index.html" class="navbar__link">Inicio</a>
+      <a href="../index.html" class="navbar__link is-active">Inicio</a>
       <a href="eventos.html" class="navbar__link">Eventos</a>
       <a href="comunidad.html" class="navbar__link">Comunidades</a>
-      <a href="foros.html" class="navbar__link">Foros</a>
+      <a href="../php/foros.php" class="navbar__link">Foros</a>
+      
     </nav>
 
-    <a href="../unete.html" class="btn btn--primary btn--small navbar__cta">Únete</a>
+    <details class="access">
+      <summary class="access__trigger" aria-label="Abrir menú de acceso">
+        <span class="access__ring">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+          </svg>
+        </span>
+      </summary>
+
+      <div class="access__panel">
+        <p class="access__title">Elige tu portal</p>
+        <div class="access__portals">
+
+          <a href="../unete.html" class="portal portal--join">
+            <span class="portal__orb">Unirme</span>
+            <span class="portal__caption">Nuevo viajero</span>
+          </a>
+
+          <a href="../login.html" class="portal portal--enter">
+            <span class="portal__orb">Entrar</span>
+            <span class="portal__caption">Ya soy viajero</span>
+          </a>
+
+        </div>
+      </div>
+    </details>
   </div>
 </header>
 
+<main>
+  <!-- Cabecera con el video de fondo -->
+  <section class="ct-hero">
+    <video class="ct-hero__video" autoplay muted loop playsinline aria-hidden="true">
+      <source src="../videos/contacto.mp4" type="video/mp4">
+    </video>
+    <div class="ct-hero__shade"></div>
+    <div class="ct-hero__inner">
+      <p class="eyebrow">Contacto</p>
+      <h1>Envía una señal<br>al multiverso</h1>
+      <p class="ct-hero__lead">Dudas, ideas o una comunidad que te gustaría ver. Te respondemos personalmente y las respuestas más útiles se publican en el muro para que otros también las lean.</p>
+      <ul class="ct-hero__facts">
+        <li><span class="ct-dot"></span> Respondemos en 24 a 48 horas</li>
+        <li>Solo mostramos tu nombre y la inicial del apellido</li>
+      </ul>
+    </div>
+  </section>
 
-<!-- 11. FOOTER -->
+  <section class="ct-main">
+    <!-- Formulario -->
+    <div class="ct-card" id="formulario">
+      <div class="ct-card__head">
+        <h2>Cuéntanos</h2>
+        <p>Elige de qué se trata y escribe sin rodeos.</p>
+      </div>
+
+      <p id="mensaje-form" class="form-mensaje" role="alert" hidden></p>
+
+      <div class="ct-sent" id="enviado" hidden>
+        <div class="ct-sent__orbit" aria-hidden="true"><i></i><i></i><b></b></div>
+        <h3>Señal recibida</h3>
+        <p>Tu mensaje ya está en nuestra bandeja. Te escribiremos al correo que dejaste.</p>
+        <a href="#muro" class="ct-sent__link">Mientras tanto, mira el muro</a>
+      </div>
+
+      <form action="../php/contacto.php" method="post" class="ct-form" id="ctForm" data-carga>
+        <fieldset class="ct-types">
+          <legend>¿De qué se trata?</legend>
+          <label><input type="radio" name="tipo" value="duda" checked><span>🤔 Una duda</span></label>
+          <label><input type="radio" name="tipo" value="idea"><span>💡 Una idea</span></label>
+          <label><input type="radio" name="tipo" value="comunidad"><span>🪐 Proponer comunidad</span></label>
+          <label><input type="radio" name="tipo" value="problema"><span>🛠️ Un problema</span></label>
+        </fieldset>
+
+        <div class="ct-row">
+          <div class="ct-field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" maxlength="80" required placeholder="Cómo te llamas">
+          </div>
+          <div class="ct-field">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" maxlength="120" required placeholder="ejemplo@correo.com">
+          </div>
+        </div>
+
+        <div class="ct-field">
+          <label for="asunto">Asunto</label>
+          <input type="text" id="asunto" name="asunto" maxlength="120" required placeholder="Resume tu mensaje en una frase">
+        </div>
+
+        <div class="ct-field">
+          <label for="mensaje">Mensaje <span class="ct-count" id="ctCount">0 / 1000</span></label>
+          <textarea id="mensaje" name="mensaje" rows="5" maxlength="1000" required placeholder="Escribe aquí los detalles…"></textarea>
+        </div>
+
+        <label class="ct-check">
+          <input type="checkbox" name="acepta_publicar" value="1">
+          <span>Si mi pregunta le sirve a más gente, acepto que se publique en el muro junto con la respuesta (sin mi correo).</span>
+        </label>
+
+        <button type="submit" class="ct-btn">Enviar mensaje</button>
+        <p class="ct-yalu">¿Necesitas una respuesta ya? <button type="button" class="ct-yalu__btn" id="abrirYalu">Pregúntale a Yalu</button></p>
+      </form>
+    </div>
+
+    <!-- Muro -->
+    <aside class="ct-wall" id="muro" aria-labelledby="muroTitulo">
+      <div class="ct-wall__head">
+        <div>
+          <h2 id="muroTitulo">El muro del multiverso</h2>
+          <p>Preguntas reales de la comunidad y lo que les respondimos.</p>
+        </div>
+      </div>
+      <div class="ct-filters" role="group" aria-label="Filtrar el muro">
+        <button type="button" class="is-on" data-f="">Todo</button>
+        <button type="button" data-f="duda">Dudas</button>
+        <button type="button" data-f="idea">Ideas</button>
+        <button type="button" data-f="comunidad">Comunidades</button>
+        <button type="button" data-f="problema">Problemas</button>
+      </div>
+      <div class="ct-feed" id="muroLista" aria-live="polite">
+        <p class="ct-empty">Cargando mensajes…</p>
+      </div>
+    </aside>
+  </section>
+</main>
 
 <footer class="footer" id="contacto">
   <div class="section-inner footer__grid">
-
     <div class="footer__brand">
-      <a href="#" class="navbar__logo">
+      <a href="../index.html" class="navbar__logo">
         <span class="navbar__logo-ring" aria-hidden="true"></span>
         <span class="navbar__logo-text">MULTIVERSE<span class="navbar__logo-accent">OF MADNESS</span></span>
       </a>
       <p class="footer__tagline">Un portal a cada comunidad que te apasiona.</p>
     </div>
-
     <div class="footer__col">
       <h4 class="footer__heading">Plataforma</h4>
-      <a href="#explora" class="footer__link">Universos</a>
-      <a href="#eventos" class="footer__link">Eventos</a>
-      <a href="#comunidades" class="footer__link">Comunidades</a>
-      <a href="#foros" class="footer__link">Foros</a>
+      <a href="comunidad.html" class="footer__link">Comunidades</a>
+      <a href="eventos.html" class="footer__link">Eventos</a>
+      <a href="../php/foros.php" class="footer__link">Foros</a>
     </div>
-
     <div class="footer__col">
-      <h4 class="footer__heading">Compañía</h4>
-      <a href="#" class="footer__link">Sobre nosotros</a>
-      <a href="#" class="footer__link">Términos y condiciones</a>
-      <a href="#" class="footer__link">Privacidad</a>
-      <a href="#contacto" class="footer__link">Contacto</a>
+      <h4 class="footer__heading">Cuenta</h4>
+      <a href="../unete.html" class="footer__link">Únete</a>
+      <a href="../login.html" class="footer__link">Iniciar sesión</a>
     </div>
-
-    <div class="footer__col">
-      <h4 class="footer__heading">Síguenos</h4>
-      <div class="footer__socials">
-        <a href="#" class="footer__social" aria-label="Instagram">IG</a>
-        <a href="#" class="footer__social" aria-label="Facebook">FB</a>
-        <a href="#" class="footer__social" aria-label="TikTok">TT</a>
-        <a href="#" class="footer__social" aria-label="X">X</a>
-      </div>
-    </div>
-
   </div>
-
-  <div class="footer__bottom">
-    <p>&copy; 2026 The Multiverse of Madness. Todos los derechos reservados.</p>
-  </div>
+  <div class="footer__bottom"><p>&copy; 2026 The Multiverse of Madness. Todos los derechos reservados.</p></div>
 </footer>
+
+<script src="../js/script.js"></script>
+<script src="../js/contacto.js"></script>
+<script src="../js/nav.js" defer></script>
+<script src="../js/yalu.js" data-news="false" defer></script>
 </body>
 </html>

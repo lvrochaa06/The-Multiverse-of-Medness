@@ -1,0 +1,70 @@
+/* EVENTOS v2 — agenda filtrable agrupada por mes (se apoya en style.css) */
+.ev-hero{
+  position:relative; padding:clamp(8rem,13vw,10rem) 0 clamp(3rem,6vw,4.5rem); border-bottom:1px solid rgba(255,255,255,.06);
+  background:
+    radial-gradient(700px 360px at 85% 10%, rgba(182,91,222,.22), transparent 70%),
+    radial-gradient(600px 360px at 10% 100%, rgba(61,230,225,.12), transparent 70%),
+    linear-gradient(180deg,#0B1521,#070E19);
+}
+.ev-hero__inner, .ev-body{ max-width:var(--container-w); margin:0 auto; padding-inline:clamp(1.5rem,5vw,3rem); }
+.ev-hero h1{ font-family:var(--font-heading); font-size:clamp(2.2rem,5.5vw,4rem); line-height:1.06; letter-spacing:-.03em; margin-bottom:1rem; }
+.ev-hero__lead{ max-width:62ch; color:var(--text-muted); }
+.ev-body{ padding-block:2.5rem 6rem; }
+
+.ev-tools{ display:flex; flex-direction:column; gap:1.1rem; margin-bottom:1.6rem; }
+.ev-chips{ display:flex; flex-wrap:wrap; gap:.5rem; }
+.ev-chips button{ padding:.5rem 1.05rem; border-radius:999px; font-size:.85rem; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.03); color:var(--text-muted); transition:all .2s; }
+.ev-chips button:hover{ color:#fff; border-color:rgba(61,230,225,.5); }
+.ev-chips button.is-on{ color:#0B1521; font-weight:700; border-color:transparent; background:linear-gradient(135deg,#B65BDE,#5E8BF5 55%,#3DE6E1); }
+.ev-controls{ display:flex; flex-wrap:wrap; gap:1rem; align-items:flex-end; }
+.ev-field{ display:flex; flex-direction:column; gap:.3rem; font-size:.78rem; color:var(--text-faint); min-width:150px; }
+.ev-field--grow{ flex:1 1 220px; }
+.ev-field select, .ev-field input{
+  padding:.7rem .9rem; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:rgba(11,21,33,.9); color:var(--text-main); font:inherit; font-size:.92rem;
+}
+.ev-field select:focus, .ev-field input:focus{ outline:none; border-color:var(--cyan); }
+.ev-switch{ display:flex; align-items:center; gap:.6rem; font-size:.88rem; color:var(--text-muted); padding-bottom:.7rem; cursor:pointer; }
+.ev-switch input{ accent-color:#37E08A; width:18px; height:18px; }
+.ev-count{ color:var(--text-faint); font-size:.85rem; margin-bottom:1.2rem; }
+
+/* Mes */
+.ev-month{ margin-bottom:2.6rem; }
+.ev-month h2{
+  display:flex; align-items:center; gap:1rem; font-family:var(--font-heading); font-size:1.15rem; font-weight:600; color:#CFE3F5; margin-bottom:1.1rem; text-transform:capitalize;
+}
+.ev-month h2::after{ content:''; flex:1; height:1px; background:linear-gradient(90deg,rgba(61,230,225,.4),transparent); }
+.ev-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:1.5rem; }
+
+/* Tarjeta */
+.ev-card{
+  position:relative; display:flex; flex-direction:column; overflow:hidden; border-radius:20px; border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.015)), #0E1A2B; transition:transform .35s, border-color .35s, box-shadow .35s;
+}
+.ev-card:hover{ transform:translateY(-6px); border-color:rgba(61,230,225,.45); box-shadow:0 22px 50px rgba(0,0,0,.45); }
+.ev-card__img{ position:relative; aspect-ratio:16/10; overflow:hidden; background:#111E31; }
+.ev-card__img img{ width:100%; height:100%; object-fit:cover; transition:transform .6s; }
+.ev-card:hover .ev-card__img img{ transform:scale(1.06); }
+.ev-card__img::after{ content:''; position:absolute; inset:auto 0 0 0; height:50%; background:linear-gradient(180deg,transparent,rgba(7,14,25,.85)); }
+.ev-date{
+  position:absolute; z-index:2; top:12px; left:12px; padding:.45rem .8rem; border-radius:12px; text-align:center; line-height:1.1;
+  background:rgba(7,14,25,.78); border:1px solid rgba(255,255,255,.14); backdrop-filter:blur(8px); font-family:var(--font-heading);
+}
+.ev-date strong{ display:block; font-size:1.05rem; }
+.ev-date span{ font-size:.66rem; letter-spacing:.1em; color:var(--cyan); text-transform:uppercase; }
+.ev-badge{
+  position:absolute; z-index:2; top:12px; right:12px; padding:.28rem .7rem; border-radius:999px; font-size:.68rem; font-weight:700;
+  background:rgba(7,14,25,.78); backdrop-filter:blur(8px);
+}
+.ev-badge--ok{ color:#7CF0B0; border:1px solid rgba(55,224,138,.55); }
+.ev-badge--est{ color:#FFD58A; border:1px solid rgba(255,196,90,.5); }
+.ev-card__body{ display:flex; flex-direction:column; flex:1; padding:1.2rem 1.3rem 1.4rem; }
+.ev-card__cat{ font-size:.74rem; color:var(--cyan); font-weight:700; margin-bottom:.3rem; }
+.ev-card h3{ font-family:var(--font-heading); font-size:1.08rem; line-height:1.25; margin-bottom:.5rem; }
+.ev-card__where{ font-size:.86rem; color:#CFE3F5; margin-bottom:.15rem; }
+.ev-card__when{ font-size:.82rem; color:var(--text-faint); margin-bottom:.7rem; }
+.ev-card__desc{ font-size:.88rem; color:var(--text-muted); flex:1; margin-bottom:1rem; }
+.ev-card__cta{ align-self:flex-start; padding:.55rem 1.2rem; border-radius:999px; font-size:.84rem; font-weight:700; border:1px solid rgba(61,230,225,.5); color:var(--cyan); transition:all .2s; }
+.ev-card__cta:hover{ background:var(--cyan); color:#0B1521; }
+.ev-card__nolink{ font-size:.8rem; color:var(--text-faint); }
+.ev-empty{ padding:3rem 1rem; text-align:center; color:var(--text-muted); border:1px dashed rgba(255,255,255,.15); border-radius:20px; }
+.ev-empty button{ margin-top:1rem; padding:.6rem 1.3rem; border-radius:999px; border:1px solid var(--cyan); color:var(--cyan); background:transparent; }
